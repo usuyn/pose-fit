@@ -35,8 +35,8 @@ async function loop (timestamp) {
   window.requestAnimationFrame(loop)
 }
 
-var status = 'stand'
-var count = 0
+let status = 'stand'
+let count = 0
 
 async function predict () {
   const { pose, posenetOutput } = await model.estimatePose(webcam.canvas)
