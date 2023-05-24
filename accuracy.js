@@ -50,6 +50,45 @@ const angleIndex = {
   }
 }
 
+// 올바른 각도, 각도 간격, 최소, 최대
+const scoreInfo = {
+  squat: {
+    upper: [40, 10, 10, 90],
+    lower: [85, 5, 30, 140]
+  },
+
+  lateralraise: {
+    left: [90, 5, 45, 110],
+    right: [90, 5, 45, 110]
+  },
+
+  'legraise-left': {
+    upper: [180, 5, 150, 185],
+    lower: [50, 5, 30, 90]
+  },
+
+  'legraise-right': {
+    upper: [180, 5, 150, 185],
+    lower: [50, 5, 30, 90]
+  },
+
+  'lunge-left': {
+    upper: [90, 5, 70, 110],
+    lower: [90, 5, 60, 110]
+  },
+
+  'lunge-right': {
+    upper: [90, 5, 70, 110],
+    lower: [90, 5, 60, 110]
+  }
+}
+
+const CORRECT_ANGLE = 0
+const INTERVAL = 1
+const MIN_ANGLE = 2
+const MAX_ANGLE = 3
+const PERFECT_SCORE = 10
+
 let points = new Array()
 let angles = new Array()
 
@@ -104,4 +143,32 @@ function calculateAngle (cx, cy, x1, y1, x2, y2) {
 
   let angle = (Math.acos((v1X * v2X + v1Y * v2Y) / (v1 * v2)) * 180) / Math.PI
   angles.push(angle)
+}
+
+export function calculateAccuracy (inputExercise) {
+  let idx = 0
+  let score = 0
+
+  for (let part in scoreInfo[inputExercise]) {
+    let info = scoreInfo[inputExercise][part]
+
+    if (angles[idx] <= info[MIN_ANGLE] || angles[idx] >= info[MAX_ANGLE]) {
+      score = 0
+    } else {
+      let diff = Math.abs(info[CORRECT_ANGLE] - userAngle)
+      score += PERFECT_SCORE - parseInt(diff / info[INTERVAL])
+    }
+
+    idx++
+  }
+
+  score /= idx
+
+  score += window.localStorage.getItem('totalScore')
+  minScore = window.localStorage.getItem('minScore')
+  maxScore = window.localStorage.getItem('maxScore')
+
+  window.localStorage.setItem('totalScore', score)
+  window.localStorage.setItem('minScore', Math.min(minScore, score))
+  window.localStorage.setItem('maxScore', Math.max(maxScore, score))
 }
