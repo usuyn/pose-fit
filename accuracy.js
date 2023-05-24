@@ -19,36 +19,34 @@ const index = {
 // 1.런지 오른쪽 상체, 2.오른쪽 하체
 
 const angleIndex = {
-  exercise: {
-    squat: {
-      index1: [index.rightHip, index.rightShoulder, index.rightKnee],
-      index2: [index.rightKnee, index.rightHip, index.rightAnkle]
-    },
+  squat: {
+    index1: [index.rightHip, index.rightShoulder, index.rightKnee],
+    index2: [index.rightKnee, index.rightHip, index.rightAnkle]
+  },
 
-    lateralraise: {
-      index1: [index.rightShoulder, index.rightHip, index.rightElbow],
-      index2: [index.leftShoulder, index.leftHip, index.leftElbow]
-    },
+  lateralraise: {
+    index1: [index.rightShoulder, index.rightHip, index.rightElbow],
+    index2: [index.leftShoulder, index.leftHip, index.leftElbow]
+  },
 
-    'legraise-left': {
-      index1: [index.rightHip, index.rightShoulder, index.rightKnee],
-      index2: [index.leftHip, index.leftKnee]
-    },
+  'legraise-left': {
+    index1: [index.rightHip, index.rightShoulder, index.rightKnee],
+    index2: [index.leftHip, index.leftKnee]
+  },
 
-    'legraise-right': {
-      index1: [index.leftHip, index.leftShoulder, index.leftKnee],
-      index2: [index.rightHip, index.rightKnee]
-    },
+  'legraise-right': {
+    index1: [index.leftHip, index.leftShoulder, index.leftKnee],
+    index2: [index.rightHip, index.rightKnee]
+  },
 
-    'lunge-left': {
-      index1: [index.rightHip, index.rightShoulder, index.rightKnee],
-      index2: [index.rightKnee, index.rightHip, index.rightAnkle]
-    },
+  'lunge-left': {
+    index1: [index.rightHip, index.rightShoulder, index.rightKnee],
+    index2: [index.rightKnee, index.rightHip, index.rightAnkle]
+  },
 
-    'lunge-right': {
-      index1: [index.leftHip, index.leftShoulder, index.leftKnee],
-      index2: [index.leftKnee, index.leftHip, index.leftAnkle]
-    }
+  'lunge-right': {
+    index1: [index.leftHip, index.leftShoulder, index.leftKnee],
+    index2: [index.leftKnee, index.leftHip, index.leftAnkle]
   }
 }
 
@@ -71,15 +69,15 @@ function getPoint (pose) {
 export function getAngle (inputExercise, pose) {
   getPoint(pose)
 
-  for (let key in angleIndex.exercise[inputExercise]) {
-    let idx = angleIndex.exercise[inputExercise][key]
+  for (let key in angleIndex[inputExercise]) {
+    let idx = angleIndex[inputExercise][key]
 
     let cx = points[idx[0]][0]
     let cy = points[idx[0]][1]
     let x1 = points[idx[1]][0]
     let y1 = points[idx[1]][1]
     let x2, y2
-    
+
     if (idx.length == 2) {
       x2 = points[idx[0]][0]
       y2 = points[idx[1]][1]
