@@ -1,15 +1,22 @@
-const URL = 'https://teachablemachine.withgoogle.com/models/KJRP6ylE8/'
+import { getAngle } from './accuracy.js'
+
 let model, webcam, ctx, labelContainer, maxPredictions
+let inputExercise = 'squat'
+
+let models = {
+  squat: 'https://teachablemachine.withgoogle.com/models/3HL1pcCPs/'
+}
 
 window.onload = function () {
+  // inputExercise = // local storage
   init()
 }
 
 async function init () {
-  const modelURL = URL + 'model.json'
-  const metadataURL = URL + 'metadata.json'
+  const modelPath = models[inputExercise] + 'model.json'
+  const metadataPath = models[inputExercise] + 'metadata.json'
 
-  model = await tmPose.load(modelURL, metadataURL)
+  model = await tmPose.load(modelPath, metadataPath)
   maxPredictions = model.getTotalClasses()
 
   const size = 500
@@ -24,6 +31,7 @@ async function init () {
   canvas.height = size
   ctx = canvas.getContext('2d')
   labelContainer = document.getElementById('label-container')
+
   for (let i = 0; i < maxPredictions; i++) {
     labelContainer.appendChild(document.createElement('div'))
   }
@@ -35,20 +43,24 @@ async function loop (timestamp) {
   window.requestAnimationFrame(loop)
 }
 
-let status = 'stand'
+let status = inputExercise + '-prepare'
 let count = 0
 
 async function predict () {
   const { pose, posenetOutput } = await model.estimatePose(webcam.canvas)
   const prediction = await model.predict(posenetOutput)
+
   if (prediction[1].probability.toFixed(2) == 1.0) {
-    if (status == 'squat') {
+    if (status == inputExercise) {
       count++
       $('#counter').html(count)
+
+      const poseCopy = _.cloneDeep(pose)
+      getAngle(inputExercise, poseCopy)
     }
-    status = 'stand'
+    status = inputExercise + '-prepare'
   } else if (prediction[0].probability.toFixed(2) == 1.0) {
-    status = 'squat'
+    status = inputExercise
   }
 
   // for (let i = 0; i < maxPredictions; i++) {
