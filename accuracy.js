@@ -79,6 +79,7 @@ export function getAngle (inputExercise, pose) {
     let x1 = points[idx[1]][0]
     let y1 = points[idx[1]][1]
     let x2, y2
+    
     if (idx.length == 2) {
       x2 = points[idx[0]][0]
       y2 = points[idx[1]][1]

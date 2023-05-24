@@ -2,6 +2,7 @@ import { getAngle } from './accuracy.js'
 
 let model, webcam, ctx, labelContainer, maxPredictions
 let inputExercise = 'squat'
+let inputReps = 5
 
 let models = {
   squat: 'https://teachablemachine.withgoogle.com/models/3HL1pcCPs/'
@@ -9,6 +10,7 @@ let models = {
 
 window.onload = function () {
   // inputExercise = // local storage
+  // inputReps = // local storage
   init()
 }
 
@@ -61,6 +63,12 @@ async function predict () {
     status = inputExercise + '-prepare'
   } else if (prediction[0].probability.toFixed(2) == 1.0) {
     status = inputExercise
+  }
+
+  if (count == inputReps) {
+    window.location.replace(
+      document.location.href.replace('exercise.html', 'analysis.html')
+    )
   }
 
   // for (let i = 0; i < maxPredictions; i++) {
