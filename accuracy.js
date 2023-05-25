@@ -53,7 +53,7 @@ const angleIndex = {
 // 올바른 각도, 각도 간격, 최소, 최대
 const scoreInfo = {
   squat: {
-    upper: [40, 10, 10, 90],
+    upper: [70, 10, 10, 100],
     lower: [85, 5, 30, 140]
   },
 
