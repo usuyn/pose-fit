@@ -2,7 +2,7 @@ import { calculateAccuracy, getAngle, scoreToPercent } from './accuracy.js'
 
 let model, webcam, ctx, labelContainer, maxPredictions
 let inputExercise = 'squat'
-let inputReps = 5
+let inputReps = 3
 let inputSets = 1
 
 let models = {
@@ -10,6 +10,7 @@ let models = {
 }
 
 window.onload = function () {
+  window.localStorage.clear() // 삭제할 것
   // inputExercise = // local storage
   // inputReps = // local storage
   // inputSets = // local storage
@@ -19,6 +20,7 @@ window.onload = function () {
   window.localStorage.setItem('maxScore', -1)
   window.localStorage.setItem('minAccuracy', 101)
   window.localStorage.setItem('maxAccuracy', -1)
+  window.localStorage.setItem('inputReps', inputReps) // 삭제할 것
   init()
 }
 
@@ -66,8 +68,8 @@ async function predict () {
       $('#counter').html(count)
 
       const poseCopy = _.cloneDeep(pose)
-      getAngle(inputExercise, poseCopy)
-      calculateAccuracy(inputExercise)
+      let userAngles = getAngle(inputExercise, poseCopy)
+      calculateAccuracy(inputExercise, userAngles)
     }
     status = inputExercise + '-prepare'
   } else if (prediction[0].probability.toFixed(2) == 1.0) {
@@ -75,9 +77,8 @@ async function predict () {
   }
 
   if (count == inputReps) {
-    // 정확도 변환
     scoreToPercent()
-    let setNum = window.localStorage.getItem('setNum') + 1
+    let setNum = Number(window.localStorage.getItem('setNum')) + 1
     window.localStorage.setItem('setNum', setNum)
     window.location.replace(
       document.location.href.replace('exercise.html', 'analysis.html')

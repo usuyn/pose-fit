@@ -106,6 +106,7 @@ function getPoint (pose) {
 }
 
 export function getAngle (inputExercise, pose) {
+  angles.length = 0
   getPoint(pose)
 
   for (let key in angleIndex[inputExercise]) {
@@ -129,7 +130,8 @@ export function getAngle (inputExercise, pose) {
   }
 
   points.length = 0
-  angles.length = 0
+
+  return angles
 }
 
 function calculateAngle (cx, cy, x1, y1, x2, y2) {
@@ -145,17 +147,19 @@ function calculateAngle (cx, cy, x1, y1, x2, y2) {
   angles.push(angle)
 }
 
-export function calculateAccuracy (inputExercise) {
+export function calculateAccuracy (inputExercise, userAngles) {
   let idx = 0
   let score = 0
 
   for (let part in scoreInfo[inputExercise]) {
     let info = scoreInfo[inputExercise][part]
-
-    if (angles[idx] <= info[MIN_ANGLE] || angles[idx] >= info[MAX_ANGLE]) {
+    if (
+      userAngles[idx] <= info[MIN_ANGLE] ||
+      userAngles[idx] >= info[MAX_ANGLE]
+    ) {
       score = 0
     } else {
-      let diff = Math.abs(info[CORRECT_ANGLE] - userAngle)
+      let diff = Math.abs(info[CORRECT_ANGLE] - userAngles[idx])
       score += PERFECT_SCORE - parseInt(diff / info[INTERVAL])
     }
 
@@ -164,29 +168,28 @@ export function calculateAccuracy (inputExercise) {
 
   score /= idx
 
-  score += window.localStorage.getItem('totalScore')
-  minScore = window.localStorage.getItem('minScore')
-  maxScore = window.localStorage.getItem('maxScore')
-
-  window.localStorage.setItem('totalScore', score)
+  let minScore = Number(window.localStorage.getItem('minScore'))
+  let maxScore = Number(window.localStorage.getItem('maxScore'))
   window.localStorage.setItem('minScore', Math.min(minScore, score))
   window.localStorage.setItem('maxScore', Math.max(maxScore, score))
+
+  score += Number(window.localStorage.getItem('totalScore'))
+
+  window.localStorage.setItem('totalScore', score)
+
+  userAngles.length = 0
 }
 
 export function scoreToPercent () {
   let averageAccuracy =
-    (window.localStorage.getItem('totalScore') /
-      window.localStorage.getItem('inputReps')) *
+    (Number(window.localStorage.getItem('totalScore')) /
+      Number(window.localStorage.getItem('inputReps'))) *
     10
-  let minAccuracy = Math.min(
-    window.localStorage.getItem('minAccuracy'),
-    window.localStorage.getItem('minScore') * 10
-  )
 
-  let maxAccuracy = Math.max(
-    window.localStorage.getItem('maxAccuracy'),
-    window.localStorage.getItem('maxScore') * 10
-  )
+    averageAccuracy = (Math.ceil(averageAccuracy * 100) / 100).toFixed(1)
+  let minAccuracy = Number(window.localStorage.getItem('minScore')) * 10
+
+  let maxAccuracy = Number(window.localStorage.getItem('maxScore')) * 10
 
   let setNum = window.localStorage.getItem('setNum')
   window.localStorage.setItem('set' + setNum, averageAccuracy)
