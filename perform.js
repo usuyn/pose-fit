@@ -1,4 +1,4 @@
-import { calculateAccuracy, getAngle, scoreToPercent } from './accuracy.js'
+import { calculateAccuracy, getAngle, scoreToPercent, checkAngles } from './accuracy.js'
 
 let model, webcam, ctx, labelContainer, maxPredictions
 let inputExercise = 'squat'
@@ -58,22 +58,34 @@ async function loop (timestamp) {
 let status = inputExercise + '-prepare'
 let count = 0
 
+let flag = true
+let userAngles
+
 async function predict () {
   const { pose, posenetOutput } = await model.estimatePose(webcam.canvas)
   const prediction = await model.predict(posenetOutput)
 
-  if (prediction[1].probability.toFixed(2) == 1.0) {
+  if(flag) {
+    prediction[0].probability = 1.0
+    flag = false
+  }
+
+  if (prediction[0].probability.toFixed(2) == 1.0) {
     if (status == inputExercise) {
       count++
       $('#counter').html(count)
 
-      const poseCopy = _.cloneDeep(pose)
-      let userAngles = getAngle(inputExercise, poseCopy)
+      userAngles = checkAngles(inputExercise, userAngles)
+      console.log(userAngles)
       calculateAccuracy(inputExercise, userAngles)
+      userAngles.length = 0
     }
     status = inputExercise + '-prepare'
-  } else if (prediction[0].probability.toFixed(2) == 1.0) {
+  } else if (prediction[1].probability.toFixed(2) == 1.0) {
     status = inputExercise
+
+    const poseCopy = _.cloneDeep(pose)
+    userAngles = getAngle(inputExercise, poseCopy)
   }
 
   if (count == inputReps) {
@@ -84,12 +96,6 @@ async function predict () {
       document.location.href.replace('exercise.html', 'analysis.html')
     )
   }
-
-  // for (let i = 0; i < maxPredictions; i++) {
-  //     const classPrediction =
-  //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-  //     labelContainer.childNodes[i].innerHTML = classPrediction;
-  // }
 
   drawPose(pose)
 }

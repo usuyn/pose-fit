@@ -83,6 +83,16 @@ const scoreInfo = {
   }
 }
 
+// min: true(스쿼트, 런지), max: false(레그레이즈, 래터럴 레이즈)
+const angleFlag = {
+  squat: true,
+  lateralraise: false,
+  'legraise-left': false,
+  'legraise-right': false,
+  'lunge-left': true,
+  'lunge-right': true
+}
+
 const CORRECT_ANGLE = 0
 const INTERVAL = 1
 const MIN_ANGLE = 2
@@ -106,7 +116,6 @@ function getPoint (pose) {
 }
 
 export function getAngle (inputExercise, pose) {
-  angles.length = 0
   getPoint(pose)
 
   for (let key in angleIndex[inputExercise]) {
@@ -144,7 +153,28 @@ function calculateAngle (cx, cy, x1, y1, x2, y2) {
   let v2 = Math.sqrt(Math.pow(v2X, 2) + Math.pow(v2Y, 2))
 
   let angle = (Math.acos((v1X * v2X + v1Y * v2Y) / (v1 * v2)) * 180) / Math.PI
+
   angles.push(angle)
+}
+
+export function checkAngles (inputExercise, userAngles) {
+  let tempAngles = new Array()
+
+  for (let i = 1; i < userAngles.length; i += 2) {
+    tempAngles.push(userAngles[i])
+  }
+
+  let findAngle
+
+  if (angleFlag[inputExercise]) {
+    findAngle = Math.min(...tempAngles)
+  } else {
+    findAngle = Math.max(...tempAngles)
+  }
+
+  let angleIdx = userAngles.indexOf(findAngle)
+
+  return [userAngles[angleIdx - 1], findAngle]
 }
 
 export function calculateAccuracy (inputExercise, userAngles) {
@@ -186,7 +216,7 @@ export function scoreToPercent () {
       Number(window.localStorage.getItem('inputReps'))) *
     10
 
-    averageAccuracy = (Math.ceil(averageAccuracy * 100) / 100).toFixed(1)
+  averageAccuracy = (Math.ceil(averageAccuracy * 100) / 100).toFixed(1)
   let minAccuracy = Number(window.localStorage.getItem('minScore')) * 10
 
   let maxAccuracy = Number(window.localStorage.getItem('maxScore')) * 10
