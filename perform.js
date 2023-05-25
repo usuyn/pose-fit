@@ -1,4 +1,4 @@
-import { calculateAccuracy, getAngle } from './accuracy.js'
+import { calculateAccuracy, getAngle, scoreToPercent } from './accuracy.js'
 
 let model, webcam, ctx, labelContainer, maxPredictions
 let inputExercise = 'squat'
@@ -13,10 +13,12 @@ window.onload = function () {
   // inputExercise = // local storage
   // inputReps = // local storage
   // inputSets = // local storage
-  window.localStorage.setItem('set', 0) // 현재까지 수행한 세트 수
+  window.localStorage.setItem('setNum', 1) // 현재까지 수행한 세트 수
   window.localStorage.setItem('totalScore', 0)
   window.localStorage.setItem('minScore', 11)
   window.localStorage.setItem('maxScore', -1)
+  window.localStorage.setItem('minAccuracy', 101)
+  window.localStorage.setItem('maxAccuracy', -1)
   init()
 }
 
@@ -73,6 +75,10 @@ async function predict () {
   }
 
   if (count == inputReps) {
+    // 정확도 변환
+    scoreToPercent()
+    let setNum = window.localStorage.getItem('setNum') + 1
+    window.localStorage.setItem('setNum', setNum)
     window.location.replace(
       document.location.href.replace('exercise.html', 'analysis.html')
     )

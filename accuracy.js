@@ -172,3 +172,28 @@ export function calculateAccuracy (inputExercise) {
   window.localStorage.setItem('minScore', Math.min(minScore, score))
   window.localStorage.setItem('maxScore', Math.max(maxScore, score))
 }
+
+export function scoreToPercent () {
+  let averageAccuracy =
+    (window.localStorage.getItem('totalScore') /
+      window.localStorage.getItem('inputReps')) *
+    10
+  let minAccuracy = Math.min(
+    window.localStorage.getItem('minAccuracy'),
+    window.localStorage.getItem('minScore') * 10
+  )
+
+  let maxAccuracy = Math.max(
+    window.localStorage.getItem('maxAccuracy'),
+    window.localStorage.getItem('maxScore') * 10
+  )
+
+  let setNum = window.localStorage.getItem('setNum')
+  window.localStorage.setItem('set' + setNum, averageAccuracy)
+  window.localStorage.setItem('minAccuracy', minAccuracy)
+  window.localStorage.setItem('maxAccuracy', maxAccuracy)
+
+  window.localStorage.removeItem('totalScore')
+  window.localStorage.removeItem('minScore')
+  window.localStorage.removeItem('maxScore')
+}
