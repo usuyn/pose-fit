@@ -12,36 +12,35 @@
 
 #analysis-wrap {
   position: absolute;
-  /* width: 120px;
-  height: 120px; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.circle-progress-wrap {
-  /* width: 120px;
-  height: 120px; */
-}
 .avg-progress,
 .min-progress,
 .max-progress:not(text) {
   transform: rotate(-90deg);
+  margin: 20px;
 }
+
 .frame,
 .avg-bar,
 .min-bar,
 .max-bar {
   fill: none;
 }
+
 .frame {
   stroke: #e6e6e6;
 }
+
 .avg-bar,
 .min-bar,
 .max-bar {
   stroke: #0044ff;
 }
+
 .avg-value,
 .min-value,
 .max-value {
@@ -50,5 +49,4 @@
   font-size: 16px;
   text-anchor: middle;
   transform: rotate(90deg);
-  /* white-space: pre-line; */
 }
