@@ -21,6 +21,8 @@ window.onload = function () {
   window.localStorage.setItem('minAccuracy', 101)
   window.localStorage.setItem('maxAccuracy', -1)
   window.localStorage.setItem('inputReps', inputReps) // 삭제할 것
+
+  $('#inputReps').html(inputReps)
   init()
 }
 
