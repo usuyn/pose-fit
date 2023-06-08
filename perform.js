@@ -1,4 +1,9 @@
-import { calculateAccuracy, getAngle, scoreToPercent, checkAngles } from './accuracy.js'
+import {
+  calculateAccuracy,
+  getAngle,
+  scoreToPercent,
+  checkAngles
+} from './accuracy.js'
 
 let model, webcam, ctx, labelContainer, maxPredictions
 let inputExercise = 'squat'
@@ -6,7 +11,7 @@ let inputReps = 3
 let inputSets = 1
 
 let models = {
-  squat: 'https://teachablemachine.withgoogle.com/models/3HL1pcCPs/'
+  squat: 'https://teachablemachine.withgoogle.com/models/VjoSZwCaL/'
 }
 
 window.onload = function () {
@@ -67,7 +72,7 @@ async function predict () {
   const { pose, posenetOutput } = await model.estimatePose(webcam.canvas)
   const prediction = await model.predict(posenetOutput)
 
-  if(flag) {
+  if (flag) {
     prediction[0].probability = 1.0
     flag = false
   }
