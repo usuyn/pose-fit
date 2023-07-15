@@ -218,10 +218,9 @@ export function scoreToPercent () {
 
   averageAccuracy = (Math.ceil(averageAccuracy * 100) / 100).toFixed(1)
   let minAccuracy = Number(window.localStorage.getItem('minScore')) * 10
-
   let maxAccuracy = Number(window.localStorage.getItem('maxScore')) * 10
-
   let setNum = window.localStorage.getItem('setNum')
+
   window.localStorage.setItem('set' + setNum, averageAccuracy)
   window.localStorage.setItem('minAccuracy', minAccuracy)
   window.localStorage.setItem('maxAccuracy', maxAccuracy)

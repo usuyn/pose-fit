@@ -1,5 +1,5 @@
 window.onload = function () {
-  let setNum = Number(window.localStorage.getItem('setNum')) - 1
+  let setNum = Number(window.localStorage.getItem('setNum'))
 
   let avgAccuracy = Number(window.localStorage.getItem('set' + setNum))
   let minAccuracy = Number(window.localStorage.getItem('minAccuracy'))

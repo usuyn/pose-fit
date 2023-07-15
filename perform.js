@@ -6,29 +6,31 @@ import {
 } from './accuracy.js'
 
 let model, webcam, ctx, labelContainer, maxPredictions
-let inputExercise = 'squat'
-let inputReps = 3
-let inputSets = 1
 
 let models = {
   squat: 'https://teachablemachine.withgoogle.com/models/VjoSZwCaL/'
 }
 
 window.onload = function () {
-  window.localStorage.clear() // 삭제할 것
-  // inputExercise = // local storage
-  // inputReps = // local storage
-  // inputSets = // local storage
-  window.localStorage.setItem('setNum', 1) // 현재까지 수행한 세트 수
+  prepareData()
+
+  $('#inputReps').html(inputReps)
+  init()
+}
+
+function prepareData () {
   window.localStorage.setItem('totalScore', 0)
   window.localStorage.setItem('minScore', 11)
   window.localStorage.setItem('maxScore', -1)
   window.localStorage.setItem('minAccuracy', 101)
   window.localStorage.setItem('maxAccuracy', -1)
-  window.localStorage.setItem('inputReps', inputReps) // 삭제할 것
 
-  $('#inputReps').html(inputReps)
-  init()
+  let setNum = Number(window.localStorage.getItem('setNum'))
+  window.localStorage.setItem('setNum', setNum ? setNum + 1 : 1)
+
+  inputExercise = window.localStorage.getItem('inputExercise')
+  inputReps = window.localStorage.getItem('inputReps')
+  inputSets = window.localStorage.getItem('inputSets')
 }
 
 async function init () {
@@ -97,8 +99,7 @@ async function predict () {
 
   if (count == inputReps) {
     scoreToPercent()
-    let setNum = Number(window.localStorage.getItem('setNum')) + 1
-    window.localStorage.setItem('setNum', setNum)
+
     window.location.replace(
       document.location.href.replace('exercise.html', 'analysis.html')
     )
