@@ -263,15 +263,20 @@ const feedback = {
 }
 
 export function generateFeedback () {
-  // userAngles 로컬 스토리지에서 받아오기, 누적 평균 각도
-  // let userAngles = window.localStorage.getItem("")
-  let inputExercise = window.localStorage.getItem('inputExercise')
-  let feedbackList = getFeedback(inputExercise, userAngles)
+  let feedbackAngles = JSON.parse(window.localStorage.getItem('feedbackAngles'))
+  let reps = Number(window.localStorage.getItem('inputReps'))
 
-  // 피드백 로컬 스토리지에 저장하기
+  feedbackAngles.forEach((angle, index) => {
+    feedbackAngles[index] = Math.floor(angle / reps)
+  })
+
+  let inputExercise = window.localStorage.getItem('inputExercise')
+  let feedbackList = getFeedback(inputExercise, feedbackAngles)
+
+  window.localStorage.setItem('feedbackList', JSON.stringify(feedbackList))
 }
 
-function getFeedback (inputExercise, userAngles) {
+function getFeedback (inputExercise, feedbackAngles) {
   let idx = 0
   let feedbackList = []
 
@@ -279,9 +284,9 @@ function getFeedback (inputExercise, userAngles) {
     let info = scoreInfo[inputExercise][part]
     let feedbackMessage = feedback[inputExercise][part]
 
-    if (info[CORRECT_ANGLE] - info[INTERVAL] > userAngles[idx]) {
+    if (info[CORRECT_ANGLE] - info[INTERVAL] > feedbackAngles[idx]) {
       feedbackList.push(feedbackMessage[0])
-    } else if (info[CORRECT_ANGLE] + info[INTERVAL] < userAngles[idx]) {
+    } else if (info[CORRECT_ANGLE] + info[INTERVAL] < feedbackAngles[idx]) {
       feedbackList.push(feedbackMessage[feedbackMessage.length - 1])
     }
 

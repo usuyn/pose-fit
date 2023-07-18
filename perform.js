@@ -26,6 +26,7 @@ function prepareData () {
   window.localStorage.setItem('maxScore', -1)
   window.localStorage.setItem('minAccuracy', 101)
   window.localStorage.setItem('maxAccuracy', -1)
+  window.localStorage.setItem('feedbackAngles', JSON.stringify([0, 0]))
 
   let setNum = Number(window.localStorage.getItem('setNum'))
   window.localStorage.setItem('setNum', setNum ? setNum + 1 : 1)
@@ -53,11 +54,11 @@ async function init () {
   canvas.width = size
   canvas.height = size
   ctx = canvas.getContext('2d')
-  labelContainer = document.getElementById('label-container')
+  // labelContainer = document.getElementById('label-container')
 
-  for (let i = 0; i < maxPredictions; i++) {
-    labelContainer.appendChild(document.createElement('div'))
-  }
+  // for (let i = 0; i < maxPredictions; i++) {
+  //   labelContainer.appendChild(document.createElement('div'))
+  // }
 }
 
 async function loop (timestamp) {
@@ -87,6 +88,7 @@ async function predict () {
       $('#counter').html(count)
 
       userAngles = checkAngles(inputExercise, userAngles)
+      window.localStorage.setItem('feedbackAngles', saveAngles())
       calculateAccuracy(inputExercise, userAngles)
       userAngles.length = 0
     }
@@ -120,4 +122,14 @@ function drawPose (pose) {
       tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx)
     }
   }
+}
+
+function saveAngles () {
+  let feedbackAngles = JSON.parse(window.localStorage.getItem('feedbackAngles'))
+
+  feedbackAngles.forEach((angle, index) => {
+    feedbackAngles[index] = Number((angle + userAngles[index]).toFixed(2))
+  })
+
+  return JSON.stringify(feedbackAngles)
 }
