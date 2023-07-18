@@ -2,10 +2,12 @@ import {
   calculateAccuracy,
   getAngle,
   scoreToPercent,
-  checkAngles
+  checkAngles,
+  generateFeedback
 } from './accuracy.js'
 
 let model, webcam, ctx, labelContainer, maxPredictions
+let inputExercise, inputReps, inputSets
 
 let models = {
   squat: 'https://teachablemachine.withgoogle.com/models/VjoSZwCaL/'
@@ -85,7 +87,6 @@ async function predict () {
       $('#counter').html(count)
 
       userAngles = checkAngles(inputExercise, userAngles)
-      console.log(userAngles)
       calculateAccuracy(inputExercise, userAngles)
       userAngles.length = 0
     }
@@ -99,6 +100,7 @@ async function predict () {
 
   if (count == inputReps) {
     scoreToPercent()
+    generateFeedback()
 
     window.location.replace(
       document.location.href.replace('exercise.html', 'analysis.html')
