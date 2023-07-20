@@ -10,7 +10,12 @@ let model, webcam, ctx, labelContainer, maxPredictions
 let inputExercise, inputReps, inputSets
 
 let models = {
-  squat: 'https://teachablemachine.withgoogle.com/models/VjoSZwCaL/'
+  squat: 'https://teachablemachine.withgoogle.com/models/VjoSZwCaL/',
+  lateralraise: 'https://teachablemachine.withgoogle.com/models/EPi--BmlM/',
+  'legraise-left': 'https://teachablemachine.withgoogle.com/models/wDXxvzk9i/',
+  'legraise-right': 'https://teachablemachine.withgoogle.com/models/wDXxvzk9i/',
+  'lunge-left': 'https://teachablemachine.withgoogle.com/models/IJsMr6OiC/',
+  'lunge-right': 'https://teachablemachine.withgoogle.com/models/IJsMr6OiC/'
 }
 
 window.onload = function () {
