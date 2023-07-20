@@ -218,10 +218,9 @@ export function scoreToPercent () {
 
   averageAccuracy = (Math.ceil(averageAccuracy * 100) / 100).toFixed(1)
   let minAccuracy = Number(window.localStorage.getItem('minScore')) * 10
-
   let maxAccuracy = Number(window.localStorage.getItem('maxScore')) * 10
-
   let setNum = window.localStorage.getItem('setNum')
+
   window.localStorage.setItem('set' + setNum, averageAccuracy)
   window.localStorage.setItem('minAccuracy', minAccuracy)
   window.localStorage.setItem('maxAccuracy', maxAccuracy)
@@ -229,4 +228,70 @@ export function scoreToPercent () {
   window.localStorage.removeItem('totalScore')
   window.localStorage.removeItem('minScore')
   window.localStorage.removeItem('maxScore')
+}
+
+const feedback = {
+  squat: {
+    upper: ['상체가 펴지지 않음', '상체가 과도하게 펴짐'],
+    lower: ['무릎이 과도하게 굽혀짐', '무릎이 적게 굽혀짐']
+  },
+
+  lateralraise: {
+    left: ['왼팔이 덜 올라감', '왼팔이 과도하게 올라감'],
+    right: ['오른팔이 덜 올라감', '오른팔이 과도하게 올라감']
+  },
+
+  'legraise-left': {
+    upper: ['상체가 기울어짐'],
+    lower: ['다리가 덜 올라감', '다리가 과도하게 올라감']
+  },
+
+  'legraise-right': {
+    upper: ['상체가 기울어짐'],
+    lower: ['다리가 덜 올라감', '다리가 과도하게 올라감']
+  },
+
+  'lunge-left': {
+    upper: ['상체가 기울어짐'],
+    lower: ['무릎이 과도하게 굽혀짐', '무릎이 적게 굽혀짐']
+  },
+
+  'lunge-right': {
+    upper: ['상체가 기울어짐'],
+    lower: ['무릎이 과도하게 굽혀짐', '무릎이 적게 굽혀짐']
+  }
+}
+
+export function generateFeedback () {
+  let feedbackAngles = JSON.parse(window.localStorage.getItem('feedbackAngles'))
+  let reps = Number(window.localStorage.getItem('inputReps'))
+
+  feedbackAngles.forEach((angle, index) => {
+    feedbackAngles[index] = Math.floor(angle / reps)
+  })
+
+  let inputExercise = window.localStorage.getItem('inputExercise')
+  let feedbackList = getFeedback(inputExercise, feedbackAngles)
+
+  window.localStorage.setItem('feedbackList', JSON.stringify(feedbackList))
+}
+
+function getFeedback (inputExercise, feedbackAngles) {
+  let idx = 0
+  let feedbackList = []
+
+  for (let part in scoreInfo[inputExercise]) {
+    let info = scoreInfo[inputExercise][part]
+    let feedbackMessage = feedback[inputExercise][part]
+
+    if (info[CORRECT_ANGLE] - info[INTERVAL] > feedbackAngles[idx]) {
+      feedbackList.push(feedbackMessage[0])
+    } else if (info[CORRECT_ANGLE] + info[INTERVAL] < feedbackAngles[idx]) {
+      feedbackList.push(feedbackMessage[feedbackMessage.length - 1])
+    }
+
+    idx++
+  }
+
+  return feedbackList
 }

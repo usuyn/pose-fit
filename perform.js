@@ -2,33 +2,38 @@ import {
   calculateAccuracy,
   getAngle,
   scoreToPercent,
-  checkAngles
+  checkAngles,
+  generateFeedback
 } from './accuracy.js'
 
 let model, webcam, ctx, labelContainer, maxPredictions
-let inputExercise = 'squat'
-let inputReps = 3
-let inputSets = 1
+let inputExercise, inputReps, inputSets
 
 let models = {
   squat: 'https://teachablemachine.withgoogle.com/models/VjoSZwCaL/'
 }
 
 window.onload = function () {
-  window.localStorage.clear() // 삭제할 것
-  // inputExercise = // local storage
-  // inputReps = // local storage
-  // inputSets = // local storage
-  window.localStorage.setItem('setNum', 1) // 현재까지 수행한 세트 수
+  prepareData()
+
+  $('#inputReps').html(inputReps)
+  init()
+}
+
+function prepareData () {
   window.localStorage.setItem('totalScore', 0)
   window.localStorage.setItem('minScore', 11)
   window.localStorage.setItem('maxScore', -1)
   window.localStorage.setItem('minAccuracy', 101)
   window.localStorage.setItem('maxAccuracy', -1)
-  window.localStorage.setItem('inputReps', inputReps) // 삭제할 것
+  window.localStorage.setItem('feedbackAngles', JSON.stringify([0, 0]))
 
-  $('#inputReps').html(inputReps)
-  init()
+  let setNum = Number(window.localStorage.getItem('setNum'))
+  window.localStorage.setItem('setNum', setNum ? setNum + 1 : 1)
+
+  inputExercise = window.localStorage.getItem('inputExercise')
+  inputReps = window.localStorage.getItem('inputReps')
+  inputSets = window.localStorage.getItem('inputSets')
 }
 
 async function init () {
@@ -49,11 +54,11 @@ async function init () {
   canvas.width = size
   canvas.height = size
   ctx = canvas.getContext('2d')
-  labelContainer = document.getElementById('label-container')
+  // labelContainer = document.getElementById('label-container')
 
-  for (let i = 0; i < maxPredictions; i++) {
-    labelContainer.appendChild(document.createElement('div'))
-  }
+  // for (let i = 0; i < maxPredictions; i++) {
+  //   labelContainer.appendChild(document.createElement('div'))
+  // }
 }
 
 async function loop (timestamp) {
@@ -83,7 +88,7 @@ async function predict () {
       $('#counter').html(count)
 
       userAngles = checkAngles(inputExercise, userAngles)
-      console.log(userAngles)
+      window.localStorage.setItem('feedbackAngles', saveAngles())
       calculateAccuracy(inputExercise, userAngles)
       userAngles.length = 0
     }
@@ -97,8 +102,8 @@ async function predict () {
 
   if (count == inputReps) {
     scoreToPercent()
-    let setNum = Number(window.localStorage.getItem('setNum')) + 1
-    window.localStorage.setItem('setNum', setNum)
+    generateFeedback()
+
     window.location.replace(
       document.location.href.replace('exercise.html', 'analysis.html')
     )
@@ -117,4 +122,14 @@ function drawPose (pose) {
       tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx)
     }
   }
+}
+
+function saveAngles () {
+  let feedbackAngles = JSON.parse(window.localStorage.getItem('feedbackAngles'))
+
+  feedbackAngles.forEach((angle, index) => {
+    feedbackAngles[index] = Number((angle + userAngles[index]).toFixed(2))
+  })
+
+  return JSON.stringify(feedbackAngles)
 }
