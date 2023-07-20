@@ -98,7 +98,15 @@ async function predict () {
       userAngles.length = 0
     }
     status = inputExercise + '-prepare'
-  } else if (prediction[1].probability.toFixed(2) == 1.0) {
+  } else if (
+    prediction[1].probability.toFixed(2) == 1.0 ||
+    (prediction[2] ? prediction[2].probability.toFixed(2) == 1.0 : false)
+  ) {
+    inputExercise =
+      prediction[1].probability.toFixed(2) == 1.0
+        ? prediction[1].className
+        : prediction[2].className
+    window.localStorage.setItem('inputExercise', inputExercise)
     status = inputExercise
 
     const poseCopy = _.cloneDeep(pose)
