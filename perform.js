@@ -10,7 +10,12 @@ let model, webcam, ctx, labelContainer, maxPredictions
 let inputExercise, inputReps, inputSets
 
 let models = {
-  squat: 'https://teachablemachine.withgoogle.com/models/VjoSZwCaL/'
+  squat: 'https://teachablemachine.withgoogle.com/models/VjoSZwCaL/',
+  lateralraise: 'https://teachablemachine.withgoogle.com/models/EPi--BmlM/',
+  'legraise-left': 'https://teachablemachine.withgoogle.com/models/wDXxvzk9i/',
+  'legraise-right': 'https://teachablemachine.withgoogle.com/models/wDXxvzk9i/',
+  'lunge-left': 'https://teachablemachine.withgoogle.com/models/IJsMr6OiC/',
+  'lunge-right': 'https://teachablemachine.withgoogle.com/models/IJsMr6OiC/'
 }
 
 window.onload = function () {
@@ -93,7 +98,15 @@ async function predict () {
       userAngles.length = 0
     }
     status = inputExercise + '-prepare'
-  } else if (prediction[1].probability.toFixed(2) == 1.0) {
+  } else if (
+    prediction[1].probability.toFixed(2) == 1.0 ||
+    (prediction[2] ? prediction[2].probability.toFixed(2) == 1.0 : false)
+  ) {
+    inputExercise =
+      prediction[1].probability.toFixed(2) == 1.0
+        ? prediction[1].className
+        : prediction[2].className
+    window.localStorage.setItem('inputExercise', inputExercise)
     status = inputExercise
 
     const poseCopy = _.cloneDeep(pose)
