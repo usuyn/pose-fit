@@ -30,13 +30,13 @@ const angleIndex = {
   },
 
   'legraise-left': {
-    index1: [index.rightHip, index.rightShoulder, index.rightKnee],
-    index2: [index.leftHip, index.leftKnee]
+    index1: [index.leftHip, index.leftShoulder, index.leftKnee],
+    index2: [index.rightHip, index.rightKnee]
   },
 
   'legraise-right': {
-    index1: [index.leftHip, index.leftShoulder, index.leftKnee],
-    index2: [index.rightHip, index.rightKnee]
+    index1: [index.rightHip, index.rightShoulder, index.rightKnee],
+    index2: [index.leftHip, index.leftKnee]
   },
 
   'lunge-left': {
