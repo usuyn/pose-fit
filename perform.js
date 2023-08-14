@@ -6,7 +6,7 @@ import {
   generateFeedback
 } from './accuracy.js'
 
-let model, webcam, ctx, labelContainer, maxPredictions
+let model, webcam, ctx
 let inputExercise, inputReps, inputSets
 
 let models = {
@@ -37,8 +37,8 @@ function prepareData () {
   window.localStorage.setItem('setNum', setNum ? setNum + 1 : 1)
 
   inputExercise = window.localStorage.getItem('inputExercise')
-  inputReps = window.localStorage.getItem('inputReps')
-  inputSets = window.localStorage.getItem('inputSets')
+  inputReps = Number(window.localStorage.getItem('inputReps'))
+  inputSets = Number(window.localStorage.getItem('inputSets'))
 }
 
 async function init () {
@@ -46,7 +46,6 @@ async function init () {
   const metadataPath = models[inputExercise] + 'metadata.json'
 
   model = await tmPose.load(modelPath, metadataPath)
-  maxPredictions = model.getTotalClasses()
 
   const size = 500
   const flip = true
@@ -59,11 +58,6 @@ async function init () {
   canvas.width = size
   canvas.height = size
   ctx = canvas.getContext('2d')
-  // labelContainer = document.getElementById('label-container')
-
-  // for (let i = 0; i < maxPredictions; i++) {
-  //   labelContainer.appendChild(document.createElement('div'))
-  // }
 }
 
 async function loop (timestamp) {
@@ -110,7 +104,7 @@ async function predict () {
     status = inputExercise
 
     const poseCopy = _.cloneDeep(pose)
-    userAngles = getAngle(inputExercise, poseCopy)
+    userAngles = _.cloneDeep(getAngle(inputExercise, poseCopy))
   }
 
   if (count == inputReps) {
