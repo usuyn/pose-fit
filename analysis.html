@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/earlyaccess/notosanskr.css"
+    />
+    <link rel="stylesheet" href="analysis.css" />
+    <script type="module" src="analysis.js"></script>
+  </head>
+
+  <body>
+    <div id="time-checker">
+      <h1>POSE FIT</h1>
+      <div id="timer"></div>
+    </div>
+    <div id="container">
+      <div id="current-set">
+          <div id="accuracy" class="content">
+            <span>이번 세트 </span><span class="highright">정확도</span>
+            <div id="accuracy-content">
+              <div id="acc-min" class="acc-item">
+                최소
+                <img src="acc-min.png">
+              </div>
+              <div id="acc-mean" class="acc-item">
+                평균
+                <img src="acc-mean.png">
+              </div>
+              <div id="acc-max" class="acc-item">
+                최대
+                <img src="acc-max.png">
+              </div>
+            </div>
+          </div>
+          <div id="feedback" class="content">
+            <span>이번 세트 </span><span class="highright">피드백</span>
+            <div id="feedback-content">
+              1. test<br>
+              2. test
+            </div>
+          </div>
+      </div>
+      <div id="previous-set" class="content">
+        <span>이전 세트 </span><span class="highright">정확도 분석</span>
+            <div id="sets-accuracy-graph">
+            </div>
+      </div>
+    </div>
+    <footer>
+      <button id="next-set-bt">다음 세트</button>
+      <button id="quit-bt">그만 두기</button>
+    </footer>
+    <div id="analysis-board">
+      <div id="title">이번 세트 정확도</div>
+      <div id="analysis-wrap">
+        <div class="circle-progress-wrap">
+          <svg
+            class="min-progress"
+            width="120"
+            height="120"
+            viewBox="0 0 120 120"
+          >
+            <text class="min-value" x="50%" y="-45%"></text>
+            <circle class="frame" cx="60" cy="60" r="54" stroke-width="12" />
+            <circle class="min-bar" cx="60" cy="60" r="54" stroke-width="12" />
+          </svg>
+
+          <svg
+            class="avg-progress"
+            width="120"
+            height="120"
+            viewBox="0 0 120 120"
+          >
+            <text class="avg-value" x="50%" y="-45%"></text>
+            <circle class="frame" cx="60" cy="60" r="54" stroke-width="12" />
+            <circle class="avg-bar" cx="60" cy="60" r="54" stroke-width="12" />
+          </svg>
+
+          <svg
+            class="max-progress"
+            width="120"
+            height="120"
+            viewBox="0 0 120 120"
+          >
+            <text class="max-value" x="50%" y="-45%"></text>
+            <circle class="frame" cx="60" cy="60" r="54" stroke-width="12" />
+            <circle class="max-bar" cx="60" cy="60" r="54" stroke-width="12" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
