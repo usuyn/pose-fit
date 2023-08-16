@@ -17,60 +17,84 @@ body {
   border-bottom: 2px solid #E9EEF4;
   align-items: center;
 }
+
 #tab-bar h1 {
   color: #326789;
   margin-left: 165px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  text-align: center;
 }
+
 #tab-bar button {
   margin-right: 100px;
-  padding: 5px 10px;
+  padding: 12px 18px;
   background-color: #326789;
   color: #E9EEF4;
-  font-weight: bold;
+  font-family: Pretendard;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+
 }
-#container{
+
+#container {
   display: flex;
 }
+
 #web-cam {
   width: 1250px;
   height: 987px;
+  position: relative;
 }
 
 #cam-canvas {
   height: 600px;
   width: 600px;
   position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
+  top: 93px;
+  left: 225px;
+  
   background-color: #E9EEF4;
 }
+
 #exercise-info {
   width: 670px;
   height: 987px;
   display: flex;
 }
+
 .counter {
   height: 246px;
   position: absolute;
   left: 70%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
-  font-weight: bold;
   display: flex;
   align-items: center;
 }
-.info-left{
+
+.info-left {
   width: 200px;
   color: #326789;
+  font-weight: 600;
+  letter-spacing: 3px;
 }
-.info-right{
 
+.info-right {
+  font-size: 66px;
+  font-weight: 800;
+  letter-spacing: 3px;
 }
-#sets{
+
+#sets {
   top: 40%;
 }
-#reps{
+
+#reps {
   top: 60%;
 }
