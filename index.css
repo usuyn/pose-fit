@@ -52,10 +52,15 @@ body {
 
 #tab-bar button {
   margin-right: 100px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   background-color: #326789;
   color: #E9EEF4;
   font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  text-align: center;
 }
 
 #main-content {
@@ -74,13 +79,8 @@ body {
   align-items: center;
 }
 
-#intro img {
-  width: 927.15px;
-  height: 669px;
-}
-
 #intro-text {
-  margin: 20px 0;
+  margin-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,11 +93,16 @@ body {
   line-height: 45px;
   letter-spacing: 0.25em;
   text-align: center;
-
 }
 
 .highright {
   color: #E65C4F;
+}
+
+#intro img {
+  width: 927.15px;
+  height: 669px;
+  margin-top: 25px;
 }
 
 #title {
@@ -147,9 +152,11 @@ body {
   width: 705px;
   height: 455px;
   margin: 15px;
-  padding: 20px;
+  padding: 30px;
   background-color: #E9EEF4;
   position: relative;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .service-title span {
@@ -170,7 +177,6 @@ body {
   line-height: 25px;
   letter-spacing: 0px;
   text-align: left;
-
 }
 
 .service-footer span {
@@ -183,7 +189,56 @@ body {
   line-height: 20px;
   letter-spacing: 0px;
   text-align: left;
+}
 
+.content-img {
+  box-shadow: 4px 4px 4px 2px #00000033;
+  position: absolute;
+  border-radius: 5px;
+}
+
+#content1-img{
+  width: 370px;
+  height: 220px;
+  bottom: 42px;
+  right: 38px;
+}
+
+#service div:nth-child(2) img{
+  width: 400px;
+  height: 225px;
+}
+
+#content2-img1 {
+  bottom: 102px;
+  right: -93px;
+}
+
+#content2-img2 {
+  bottom: 42px;
+  right: 38px;
+}
+
+#service div:nth-child(3) img{
+  width: 345px;
+  height: 195px;
+}
+
+#content3-img1 {
+  bottom: 102px;
+  right: -41px;
+}
+
+#content3-img2 {
+  bottom: 42px;
+  right: 38px;
+}
+
+#content4-img {
+  width: 295px;
+  height: 237px;
+  bottom: 42px;
+  right: 36px;
 }
 
 footer {
