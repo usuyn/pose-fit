@@ -53,9 +53,15 @@ body {
 #tab-bar button {
   margin-right: 100px;
   padding: 5px 10px;
+  padding: 10px 15px;
   background-color: #326789;
   color: #E9EEF4;
   font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  text-align: center;
 }
 
 #main-content {
