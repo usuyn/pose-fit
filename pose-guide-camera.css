@@ -43,4 +43,10 @@ body {
     color: #fff;
     text-align: center;
     margin: 20px 30px 0 0;
+    margin: 20px 30px 0 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 3px;
+    text-align: center;
 }
