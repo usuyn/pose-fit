@@ -21,7 +21,12 @@ body {
 #tab-bar h1 {
   color: #326789;
   margin-left: 165px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  text-align: center;
+
 }
 
 #tab-items {
@@ -31,8 +36,13 @@ body {
 }
 
 .tab-item {
-  font-weight: bold;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  text-align: left;
+
 }
 
 .tab-item:hover {
@@ -63,6 +73,7 @@ footer {
   justify-content: space-between;
   background-color: #E9EEF4;
   padding: 30px 300px 10px 300px;
+  position: relative;
 }
 
 #team-name {
@@ -94,7 +105,7 @@ footer {
 
 #copyright {
   position: absolute;
-  top: 206px;
+  bottom: 30px;
   left: 805px;
   margin-top: auto;
   font-size: 20px;
