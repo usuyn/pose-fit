@@ -66,11 +66,15 @@ footer {
 }
 
 #team-name {
-  text-align: left;
+  margin-top: 30px;
   margin-bottom: auto;
   font-size: 30px;
-  font-weight: bold;
   color: #326789;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: center;
 }
 
 #git-link {
