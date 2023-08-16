@@ -226,7 +226,7 @@ footer {
 
 #copyright {
   position: absolute;
-  top: 206px;
+  bottom: 30px;
   left: 805px;
   margin-top: auto;
   font-size: 20px;
