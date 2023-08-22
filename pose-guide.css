@@ -1,14 +1,9 @@
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
 
 body {
     width: 500px;
     height: 500px;
-    font-family: Pretendard-Regular;
+    font-family: Pretendard;
 }
 
 #main-content {
@@ -24,15 +19,6 @@ body {
     width: 500px;
     height: 430px;
     background-color: #E9EEF4;
-}
-
-#close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 24px;
-    height: 24px;
-    border: solid 1px black;
 }
 
 #btn-wrapper {
