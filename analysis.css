@@ -28,7 +28,7 @@ body {
 
 #time-checker h1 {
   color: #326789;
-  margin-left: 165px;
+  margin-left: 80px;
   font-family: Pretendard;
   font-size: 45px;
   font-weight: 800;
@@ -132,18 +132,24 @@ body {
   color: #E65C4F;
 }
 
-footer {
+#btn-container {
   display: flex;
   justify-content: flex-end;
   padding: 20px 50px;
 }
 
-footer button {
+#btn-container button {
+  width: 140px;
+  height: 54px;
   margin-right: 40px;
   padding: 5px 10px;
   background-color: #326789;
   color: #E9EEF4;
-  font-weight: bold;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 3px;
+  text-align: center;
 }
 
 #analysis-board {
