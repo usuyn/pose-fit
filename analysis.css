@@ -12,8 +12,10 @@
   font-style: normal;
 }
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+
 body {
-  font-family: Pretendard-Regular;
+  font-family: Pretendard;
 }
 
 #time-checker {
@@ -27,7 +29,13 @@ body {
 #time-checker h1 {
   color: #326789;
   margin-left: 165px;
-  font-weight: bold;
+  font-family: Pretendard;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 32px;
+  letter-spacing: 2px;
+  text-align: center;
+
 }
 
 #timer {
@@ -68,8 +76,12 @@ body {
 }
 
 .content span {
-  font-size: 32px;
-  font-weight: bold;
+  font-family: Pretendard;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 2px;
+  text-align: center;
   margin-top: 30px;
 }
 
