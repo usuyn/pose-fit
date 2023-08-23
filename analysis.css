@@ -23,6 +23,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   background-color: white;
 }
 
@@ -35,14 +36,23 @@ body {
   line-height: 32px;
   letter-spacing: 2px;
   text-align: center;
+}
 
+#stopwatch-icon {
+  position: absolute;
+  top: 30px;
+  right: 176px;
+}
+
+#stopwatch-icon img{
+  width: 65px;
+  height: 65px;
 }
 
 #timer {
-  width: 100px;
-  height: 100px;
-  margin-right: 100px;
-  background-color: #E9EEF4;
+  width: 140px;
+  height: 140px;
+  margin-right: 40px;
 }
 
 #container {
@@ -76,7 +86,6 @@ body {
 }
 
 .content span {
-  font-family: Pretendard;
   font-size: 30px;
   font-weight: 700;
   line-height: 32px;
@@ -126,6 +135,12 @@ body {
   text-align: left;
   display: block;
   margin: 0 0 25px 0;
+}
+
+#sets-accuracy-graph {
+  width: 770px;
+  height: 550px;
+  padding: 150px 20px ;
 }
 
 .highright {
