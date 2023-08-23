@@ -165,6 +165,7 @@ body {
   line-height: 30px;
   letter-spacing: 3px;
   text-align: center;
+  border: none;
 }
 
 #analysis-board {
