@@ -150,7 +150,7 @@ body {
 #btn-container {
   display: flex;
   justify-content: flex-end;
-  padding: 20px 50px;
+  padding: 50px 20px;
 }
 
 #btn-container button {
