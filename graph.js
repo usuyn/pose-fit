@@ -308,7 +308,7 @@ let setsGraph = new Highcharts.Chart('setsAccuracyGraph', {
     }]
 })
 
-//  restTime
+const restTime = 30;
 let timerValue = restTime;
 let timerInterval;
 
