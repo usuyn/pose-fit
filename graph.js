@@ -385,13 +385,17 @@ let timerChart = Highcharts.chart('timer', {
 });
 
 function startTimer() {
+    clearInterval(timerInterval);
+    timerValue = 60;
+    timerChart.series[0].points[0].update(timerValue);
+
     timerInterval = setInterval(function () {
         timerValue--;
         if (timerValue == 0) {
             clearInterval(timerInterval);
-        } else {
-            timerChart.series[0].points[0].update(timerValue);
         }
+
+        timerChart.series[0].points[0].update(timerValue);
     }, 1000);
 }
 
