@@ -18,15 +18,18 @@ body {
   font-family: Pretendard;
 }
 
-#time-checker {
+
+#timeChecker {
   height: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   background-color: white;
 }
 
-#time-checker h1 {
+#timeChecker h1 {
+
   color: #326789;
   margin-left: 80px;
   font-family: Pretendard;
@@ -35,14 +38,24 @@ body {
   line-height: 32px;
   letter-spacing: 2px;
   text-align: center;
+}
 
+#stopwatchIcon {
+  position: absolute;
+  top: 30px;
+  right: 176px;
+}
+
+#stopwatchIcon img{
+  width: 65px;
+  height: 65px;
 }
 
 #timer {
-  width: 100px;
-  height: 100px;
-  margin-right: 100px;
-  background-color: #E9EEF4;
+  width: 140px;
+  height: 140px;
+  margin-right: 40px;
+
 }
 
 #container {
@@ -51,13 +64,15 @@ body {
   margin-right: 50px;
 }
 
-#current-set {
+#currentSet {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 709px;
+  position: relative;
 }
 
-#previous-set {
+#previousSet {
   height: 709px;
   margin-left: 30px;
 }
@@ -72,11 +87,19 @@ body {
 #accuracy,
 #feedback {
   height: 340px;
-  margin-bottom: 20px;
+  position: absolute;
+  /* margin-bottom: 20px; */
+}
+
+#accuracy {
+  top: 0px;
+}
+
+#feedback {
+  bottom: 0px;
 }
 
 .content span {
-  font-family: Pretendard;
   font-size: 30px;
   font-weight: 700;
   line-height: 32px;
@@ -85,20 +108,20 @@ body {
   margin-top: 30px;
 }
 
-#accuracy-content,
-#feedback-content {
+#accuracyContent,
+#feedbackContent {
   width: 780px;
   height: 260px;
   margin-left: 20px;
 }
 
-#accuracy-content {
+#accuracyContent {
   display: flex;
   align-items: center;
   margin: 30px 0px;
 }
 
-.acc-item {
+.accItem {
   width: 260px;
   height: 260px;
   font-size: 23px;
@@ -108,37 +131,44 @@ body {
   align-items: center;
 }
 
-.acc-item img {
+.accItem img {
   width: 137px;
   height: 137px;
   margin-top: 10px;
 }
 
-#feedback-content {
+#feedbackContent {
   padding: 20px;
+  margin-top: 10px;
 }
 
-#feedback-content span {
+#feedbackContent span {
   font-size: 25px;
-  font-weight: 500;
-  line-height: 25px;
+  font-weight: 600;
+  line-height: 30px;
   letter-spacing: 5px;
   text-align: left;
   display: block;
   margin: 0 0 25px 0;
 }
 
-.highright {
+#setsAccuracyGraph {
+  width: 770px;
+  height: 550px;
+  padding: 150px 20px ;
+}
+
+.highlight {
   color: #E65C4F;
 }
 
-#btn-container {
+#btnContainer {
   display: flex;
   justify-content: flex-end;
-  padding: 20px 50px;
+  padding: 50px 20px;
 }
 
-#btn-container button {
+#btnContainer button {
   width: 140px;
   height: 54px;
   margin-right: 40px;
@@ -150,6 +180,7 @@ body {
   line-height: 30px;
   letter-spacing: 3px;
   text-align: center;
+  border: none;
 }
 
 #analysis-board {

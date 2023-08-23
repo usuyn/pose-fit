@@ -103,6 +103,7 @@ let points = new Array()
 let angles = new Array()
 
 function getPoint (pose) {
+
   points.length = 0
 
   for (let i = 0; i < 17; i++) {
@@ -160,8 +161,8 @@ function calculateAngle (cx, cy, x1, y1, x2, y2) {
 }
 
 export function checkAngles (inputExercise, userAngles) {
-  angles.length = 0
 
+  angles.length = 0
   let tempAngles = new Array()
 
   for (let i = 1; i < userAngles.length; i += 2) {

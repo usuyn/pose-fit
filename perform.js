@@ -6,6 +6,7 @@ import {
   generateFeedback
 } from './accuracy.js'
 
+
 let model, webcam, ctx
 let inputExercise, inputReps, inputSets
 
