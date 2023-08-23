@@ -65,6 +65,8 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 709px;
+  position: relative;
 }
 
 #previous-set {
@@ -82,7 +84,16 @@ body {
 #accuracy,
 #feedback {
   height: 340px;
-  margin-bottom: 20px;
+  position: absolute;
+  /* margin-bottom: 20px; */
+}
+
+#accuracy {
+  top: 0px;
+}
+
+#feedback {
+  bottom: 0px;
 }
 
 .content span {
@@ -125,6 +136,7 @@ body {
 
 #feedback-content {
   padding: 20px;
+  margin-top: 10px;
 }
 
 #feedback-content span {
