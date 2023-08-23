@@ -30,13 +30,13 @@ const angleIndex = {
   },
 
   'legraise-left': {
-    index1: [index.rightHip, index.rightShoulder, index.rightKnee],
-    index2: [index.leftHip, index.leftKnee]
+    index1: [index.leftHip, index.leftShoulder, index.leftKnee],
+    index2: [index.rightHip, index.rightKnee]
   },
 
   'legraise-right': {
-    index1: [index.leftHip, index.leftShoulder, index.leftKnee],
-    index2: [index.rightHip, index.rightKnee]
+    index1: [index.rightHip, index.rightShoulder, index.rightKnee],
+    index2: [index.leftHip, index.leftKnee]
   },
 
   'lunge-left': {
@@ -103,6 +103,9 @@ let points = new Array()
 let angles = new Array()
 
 function getPoint (pose) {
+
+  points.length = 0
+
   for (let i = 0; i < 17; i++) {
     points.push([0, 0])
   }
@@ -158,6 +161,8 @@ function calculateAngle (cx, cy, x1, y1, x2, y2) {
 }
 
 export function checkAngles (inputExercise, userAngles) {
+
+  angles.length = 0
   let tempAngles = new Array()
 
   for (let i = 1; i < userAngles.length; i += 2) {

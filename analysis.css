@@ -18,6 +18,7 @@ body {
   font-family: Pretendard;
 }
 
+
 #timeChecker {
   height: 200px;
   display: flex;
@@ -28,6 +29,7 @@ body {
 }
 
 #timeChecker h1 {
+
   color: #326789;
   margin-left: 80px;
   font-family: Pretendard;
@@ -53,6 +55,7 @@ body {
   width: 140px;
   height: 140px;
   margin-right: 40px;
+
 }
 
 #container {

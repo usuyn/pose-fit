@@ -8,8 +8,6 @@ window.onload = function () {
   fillProgressBar(avgAccuracy, '.avg-bar', '.avg-value', '평균')
   fillProgressBar(minAccuracy, '.min-bar', '.min-value', '최소')
   fillProgressBar(maxAccuracy, '.max-bar', '.max-value', '최대')
-
-  accuracyChart()
 }
 
 function fillProgressBar (accuracy, barName, valueName, typeName) {
