@@ -6,7 +6,6 @@ import {
   generateFeedback
 } from './accuracy.js'
 
-
 let model, webcam, ctx
 let inputExercise, inputReps, inputSets
 
@@ -36,6 +35,12 @@ function prepareData () {
 
   let setNum = Number(window.localStorage.getItem('setNum'))
   window.localStorage.setItem('setNum', setNum ? setNum + 1 : 1)
+
+  let setsAccuracy = JSON.parse(window.localStorage.getItem('setsAccuracy'))
+  window.localStorage.setItem(
+    'setsAccuracy',
+    setsAccuracy ? JSON.stringify(setsAccuracy) : JSON.stringify([])
+  )
 
   inputExercise = window.localStorage.getItem('inputExercise')
   inputReps = Number(window.localStorage.getItem('inputReps'))
