@@ -28,38 +28,3 @@ function fillProgressBar (accuracy, barName, valueName, typeName) {
   bar.style.strokeDashoffset = dashOffset
   bar.style.strokeDasharray = circumference
 }
-
-let min_score = 70
-let mean_score = 77
-let max_score = 95
-
-function accuracyChart() {
-  let minChart = Highcharts.Chart('min-chart',{
-    chart: {
-      renderTo: 'min_chart',
-      type: 'pie',
-    },
-
-    title: {
-      verticalAlign: 'middle',
-      floating: true,
-      text: min_score
-    },
-
-    plotOptions: {
-      pie: {
-        innerSize: '80%'
-      }
-    },
-
-    series: [{
-      data:[
-        ['score', 50],
-        ['rest', 50]
-      ]
-    }]
-
-
-
-  });
-}
