@@ -6,7 +6,8 @@ body {
 
 #tab-bar {
   height: 80px;
-  position: relative;
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   background-color: white;
