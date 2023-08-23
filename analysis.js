@@ -8,6 +8,10 @@ window.onload = function () {
   fillProgressBar(avgAccuracy, '.avg-bar', '.avg-value', '평균')
   fillProgressBar(minAccuracy, '.min-bar', '.min-value', '최소')
   fillProgressBar(maxAccuracy, '.max-bar', '.max-value', '최대')
+
+  let setsAccuracy = JSON.parse(window.localStorage.getItem('setsAccuracy'))
+  setsAccuracy.push(avgAccuracy)
+  window.localStorage.setItem('setsAccuracy', JSON.stringify(setsAccuracy))
 }
 
 function fillProgressBar (accuracy, barName, valueName, typeName) {
