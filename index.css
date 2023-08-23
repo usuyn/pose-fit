@@ -6,6 +6,7 @@ body {
 
 #tab-bar {
   height: 80px;
+  width: 100%;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -58,14 +59,14 @@ body {
 }
 
 #main-content {
-  width: 1920px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #intro {
-  width: 1920px;
+  width: 100%;
   height: 1020px;
   background-color: #E9EEF4;
   display: flex;
@@ -101,7 +102,7 @@ body {
 }
 
 #title {
-  width: 1920px;
+  width: 100%;
   height: 443px;
   display: flex;
   flex-direction: column;
