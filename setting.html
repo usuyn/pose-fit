@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="setting.css" />
+</head>
+
+<body>
+  <div id="title">운동 프로그램 설정</div>
+  <div id="exercise">
+    <label for="exercise">운동 종목</label>
+    <div class="radio-group">
+      <div class="exercise-radio-btn selected">
+        <input id="squat" type="radio" name="exercise" value="squat" checked>
+        <label for="squat">스쿼트</label>
+      </div>
+      <div class="exercise-radio-btn">
+        <input id="lunge" type="radio" name="exercise" value="lunge">
+        <label for="lunge">런지</label>
+      </div>
+    </div>
+    <div class="radio-group">
+      <div class="exercise-radio-btn">
+        <input id="leg-raise" type="radio" name="exercise" value="leg-raise">
+        <label for="leg-raise">사이드 레그 레이즈</label>
+      </div>
+      <div class="exercise-radio-btn">
+        <input id="lateral-raise" type="radio" name="exercise" value="lateral-raise">
+        <label for="lateral-raise">래터럴 레이즈</label>
+      </div>
+    </div>
+  </div>
+  <div id="reps">
+    <div id="sets-input" class="input-box">
+      <label for="sets">세트 수</label>
+      <select name="sets">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      세트
+    </div>
+    <div id="reps-input" class="input-box">
+      <label for="reps">1세트 당 운동 횟수</label>
+      <input type="number" min="1" max="30" value="reps" placeholder="횟수 입력">회
+      <div id="alert-box">1 이상의 값을 입력해주세요.</div>
+    </div>
+
+  </div>
+  <button id="setting-btn">설정 하기</button>
+  <script>
+    const radioButtons = document.querySelectorAll(".exercise-radio-btn input[type='radio']");
+    const parentDivs = document.querySelectorAll(".exercise-radio-btn");
+
+    radioButtons.forEach((radioButton, index) => {
+      radioButton.addEventListener("change", () => {
+        parentDivs.forEach((div) => {
+          div.classList.remove("selected");
+        });
+        parentDivs[index].classList.toggle("selected");
+      });
+    });
+  </script>
+</body>
+
+</html>
