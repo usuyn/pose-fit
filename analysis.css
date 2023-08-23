@@ -18,7 +18,7 @@ body {
   font-family: Pretendard;
 }
 
-#time-checker {
+#timeChecker {
   height: 200px;
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@ body {
   background-color: white;
 }
 
-#time-checker h1 {
+#timeChecker h1 {
   color: #326789;
   margin-left: 80px;
   font-family: Pretendard;
@@ -38,13 +38,13 @@ body {
   text-align: center;
 }
 
-#stopwatch-icon {
+#stopwatchIcon {
   position: absolute;
   top: 30px;
   right: 176px;
 }
 
-#stopwatch-icon img{
+#stopwatchIcon img{
   width: 65px;
   height: 65px;
 }
@@ -61,7 +61,7 @@ body {
   margin-right: 50px;
 }
 
-#current-set {
+#currentSet {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ body {
   position: relative;
 }
 
-#previous-set {
+#previousSet {
   height: 709px;
   margin-left: 30px;
 }
@@ -105,20 +105,20 @@ body {
   margin-top: 30px;
 }
 
-#accuracy-content,
-#feedback-content {
+#accuracyContent,
+#feedbackContent {
   width: 780px;
   height: 260px;
   margin-left: 20px;
 }
 
-#accuracy-content {
+#accuracyContent {
   display: flex;
   align-items: center;
   margin: 30px 0px;
 }
 
-.acc-item {
+.accItem {
   width: 260px;
   height: 260px;
   font-size: 23px;
@@ -128,18 +128,18 @@ body {
   align-items: center;
 }
 
-.acc-item img {
+.accItem img {
   width: 137px;
   height: 137px;
   margin-top: 10px;
 }
 
-#feedback-content {
+#feedbackContent {
   padding: 20px;
   margin-top: 10px;
 }
 
-#feedback-content span {
+#feedbackContent span {
   font-size: 25px;
   font-weight: 600;
   line-height: 30px;
@@ -149,7 +149,7 @@ body {
   margin: 0 0 25px 0;
 }
 
-#sets-accuracy-graph {
+#setsAccuracyGraph {
   width: 770px;
   height: 550px;
   padding: 150px 20px ;
@@ -159,13 +159,13 @@ body {
   color: #E65C4F;
 }
 
-#btn-container {
+#btnContainer {
   display: flex;
   justify-content: flex-end;
   padding: 50px 20px;
 }
 
-#btn-container button {
+#btnContainer button {
   width: 140px;
   height: 54px;
   margin-right: 40px;

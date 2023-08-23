@@ -20,38 +20,35 @@
 </head>
 
 <body>
-  <div id="time-checker">
+  <div id="timeChecker">
     <h1>POSE FIT</h1>
-    <div id="stopwatch-icon"><img src="timerIcon.png"></div>
+    <div id="stopwatchIcon"><img src="timerIcon.png"></div>
     <div id="timer"></div>
   </div>
   <div id="container">
-    <div id="current-set">
+    <div id="currentSet">
       <div id="accuracy" class="content">
         <span>이번 세트 </span><span class="highlight">정확도</span>
-        <div id="accuracy-content">
-          <div id="min-chart" class="acc-item"></div>
-          <div id="mean-chart" class="acc-item"></div>
-          <div id="max-chart" class="acc-item"></div>
+        <div id="accuracyContent">
+          <div id="minChart" class="accItem"></div>
+          <div id="meanChart" class="accItem"></div>
+          <div id="maxChart" class="accItem"></div>
         </div>
       </div>
       <div id="feedback" class="content">
         <span>이번 세트 </span><span class="highlight">피드백</span>
-        <div id="feedback-content">
-          <span>1. 상체가 펴지지 않음</span>
-          <span>2. 상체가 과도하게 펴짐</span>
-        </div>
+        <div id="feedbackContent"></div>
       </div>
     </div>
-    <div id="previous-set" class="content">
+    <div id="previousSet" class="content">
       <span>이전 세트 </span><span class="highlight">정확도 분석</span>
-      <div id="sets-accuracy-graph">
+      <div id="setsAccuracyGraph">
       </div>
     </div>
   </div>
-  <div id="btn-container">
-    <button id="next-set-bt">다음 세트</button>
-    <button id="quit-bt">그만 두기</button>
+  <div id="btnContainer">
+    <button id="nextSetBt">다음 세트</button>
+    <button id="quitBt">그만 두기</button>
   </div>
   <script src="graph.js"></script>
 </body>

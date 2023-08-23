@@ -1,12 +1,7 @@
-let min_score = 68
-let mean_score = 75
-let max_score = 92
-
-let sets_acc = [20, 52, 70, 89, 42, 68, 52]
-
-let min_chart = new Highcharts.Chart('min-chart', {
+//setsAcc, minScore, meanScore, maxScore
+const minChart = new Highcharts.Chart('minChart', {
     chart: {
-        renderTo: 'min-chart',
+        renderTo: 'minChart',
         type: 'solidgauge',
         backgroundColor: "transparent",
         width: 230,
@@ -65,7 +60,7 @@ let min_chart = new Highcharts.Chart('min-chart', {
             {
                 radius: '112%',
                 innerRadius: '90%',
-                y: min_score
+                y: minScore
             }
         ],
 
@@ -82,9 +77,9 @@ let min_chart = new Highcharts.Chart('min-chart', {
     }]
 })
 
-let mean_chart = new Highcharts.Chart('mean-chart', {
+const meanChart = new Highcharts.Chart('meanChart', {
     chart: {
-        renderTo: 'mean-chart',
+        renderTo: 'meanChart',
         type: 'solidgauge',
         backgroundColor: "transparent",
         width: 230,
@@ -143,7 +138,7 @@ let mean_chart = new Highcharts.Chart('mean-chart', {
             {
                 radius: '112%',
                 innerRadius: '90%',
-                y: mean_score
+                y: meanScore
             }
         ],
 
@@ -160,9 +155,9 @@ let mean_chart = new Highcharts.Chart('mean-chart', {
     }]
 })
 
-let max_chart = new Highcharts.Chart('max-chart', {
+let maxChart = new Highcharts.Chart('maxChart', {
     chart: {
-        renderTo: 'max-chart',
+        renderTo: 'maxChart',
         type: 'solidgauge',
         backgroundColor: "transparent",
         width: 230,
@@ -221,7 +216,7 @@ let max_chart = new Highcharts.Chart('max-chart', {
             {
                 radius: '112%',
                 innerRadius: '90%',
-                y: max_score
+                y: maxScore
             }
         ],
 
@@ -238,9 +233,9 @@ let max_chart = new Highcharts.Chart('max-chart', {
     }]
 })
 
-let sets_graph = new Highcharts.Chart('sets-accuracy-graph', {
+let setsGraph = new Highcharts.Chart('setsAccuracyGraph', {
     chart: {
-        renderTo: 'sets-accuracy-graph',
+        renderTo: 'setsAccuracyGraph',
         type: 'spline',
         backgroundColor: "transparent",
         width: 700,
@@ -264,7 +259,7 @@ let sets_graph = new Highcharts.Chart('sets-accuracy-graph', {
     },
 
     xAxis: {
-        categories: Array.from({ length: sets_acc.length }, (_, i) => `${i + 1}`),
+        categories: Array.from({ length: setsAcc.length }, (_, i) => `${i + 1}`),
         lineColor: '#B0B0B0',
         gridLineColor: '#B0B0B0',
         gridLineWidth: 1,
@@ -308,15 +303,16 @@ let sets_graph = new Highcharts.Chart('sets-accuracy-graph', {
     },
 
     series: [{
-        data: sets_acc,
+        data: setsAcc,
         color: '#326789'
     }]
 })
 
-let timerValue = 60;
+//  restTime
+let timerValue = restTime;
 let timerInterval;
 
-let timerChart = Highcharts.chart('timer', {
+const timerChart = Highcharts.chart('timer', {
     chart: {
         type: 'solidgauge',
         backgroundColor: "transparent"
@@ -340,7 +336,7 @@ let timerChart = Highcharts.chart('timer', {
 
     yAxis: {
         min: 0,
-        max: 60,
+        max: timerValue,
         lineWidth: 0,
         tickPositions: [],
         stops: [
@@ -386,7 +382,7 @@ let timerChart = Highcharts.chart('timer', {
 
 function startTimer() {
     clearInterval(timerInterval);
-    timerValue = 60;
+    timerValue = restTime;
     timerChart.series[0].points[0].update(timerValue);
 
     timerInterval = setInterval(function () {
@@ -399,4 +395,4 @@ function startTimer() {
     }, 1000);
 }
 
-document.getElementById('stopwatch-icon').addEventListener('click', startTimer);
+document.getElementById('stopwatchIcon').addEventListener('click', startTimer);
