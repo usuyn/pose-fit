@@ -28,7 +28,7 @@
   <div id="container">
     <div id="current-set">
       <div id="accuracy" class="content">
-        <span>이번 세트 </span><span class="highright">정확도</span>
+        <span>이번 세트 </span><span class="highlight">정확도</span>
         <div id="accuracy-content">
           <div id="min-chart" class="acc-item"></div>
           <div id="mean-chart" class="acc-item"></div>
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div id="feedback" class="content">
-        <span>이번 세트 </span><span class="highright">피드백</span>
+        <span>이번 세트 </span><span class="highlight">피드백</span>
         <div id="feedback-content">
           <span>1. 상체가 펴지지 않음</span>
           <span>2. 상체가 과도하게 펴짐</span>
@@ -44,7 +44,7 @@
       </div>
     </div>
     <div id="previous-set" class="content">
-      <span>이전 세트 </span><span class="highright">정확도 분석</span>
+      <span>이전 세트 </span><span class="highlight">정확도 분석</span>
       <div id="sets-accuracy-graph">
       </div>
     </div>
@@ -52,30 +52,6 @@
   <div id="btn-container">
     <button id="next-set-bt">다음 세트</button>
     <button id="quit-bt">그만 두기</button>
-  </div>
-  <div id="analysis-board">
-    <div id="title">이번 세트 정확도</div>
-    <div id="analysis-wrap">
-      <div class="circle-progress-wrap">
-        <svg class="min-progress" width="120" height="120" viewBox="0 0 120 120">
-          <text class="min-value" x="50%" y="-45%"></text>
-          <circle class="frame" cx="60" cy="60" r="54" stroke-width="12" />
-          <circle class="min-bar" cx="60" cy="60" r="54" stroke-width="12" />
-        </svg>
-
-        <svg class="avg-progress" width="120" height="120" viewBox="0 0 120 120">
-          <text class="avg-value" x="50%" y="-45%"></text>
-          <circle class="frame" cx="60" cy="60" r="54" stroke-width="12" />
-          <circle class="avg-bar" cx="60" cy="60" r="54" stroke-width="12" />
-        </svg>
-
-        <svg class="max-progress" width="120" height="120" viewBox="0 0 120 120">
-          <text class="max-value" x="50%" y="-45%"></text>
-          <circle class="frame" cx="60" cy="60" r="54" stroke-width="12" />
-          <circle class="max-bar" cx="60" cy="60" r="54" stroke-width="12" />
-        </svg>
-      </div>
-    </div>
   </div>
   <script src="graph.js"></script>
 </body>

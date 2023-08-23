@@ -65,6 +65,8 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 709px;
+  position: relative;
 }
 
 #previous-set {
@@ -82,7 +84,16 @@ body {
 #accuracy,
 #feedback {
   height: 340px;
-  margin-bottom: 20px;
+  position: absolute;
+  /* margin-bottom: 20px; */
+}
+
+#accuracy {
+  top: 0px;
+}
+
+#feedback {
+  bottom: 0px;
 }
 
 .content span {
@@ -125,12 +136,13 @@ body {
 
 #feedback-content {
   padding: 20px;
+  margin-top: 10px;
 }
 
 #feedback-content span {
   font-size: 25px;
-  font-weight: 500;
-  line-height: 25px;
+  font-weight: 600;
+  line-height: 30px;
   letter-spacing: 5px;
   text-align: left;
   display: block;
@@ -143,14 +155,14 @@ body {
   padding: 150px 20px ;
 }
 
-.highright {
+.highlight {
   color: #E65C4F;
 }
 
 #btn-container {
   display: flex;
   justify-content: flex-end;
-  padding: 20px 50px;
+  padding: 50px 20px;
 }
 
 #btn-container button {
@@ -165,6 +177,7 @@ body {
   line-height: 30px;
   letter-spacing: 3px;
   text-align: center;
+  border: none;
 }
 
 #analysis-board {
