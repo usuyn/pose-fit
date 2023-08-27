@@ -1,184 +1,184 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
 
 body {
-    width: 500px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Pretendard;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Pretendard;
 }
 
 #title {
-    height: 80px;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    line-height: 80px;
-    vertical-align: middle;
-    display: inline-block;
-    line-height: 4;
-    letter-spacing: 0.2px;
-    text-align: center;
+  height: 80px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 80px;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 4;
+  letter-spacing: 0.2px;
+  text-align: center;
 }
 
 #exercise {
-    width: 420px;
+  width: 420px;
 }
 
 .radio-group {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .exercise-radio-btn {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    position: relative;
-    width: 164px;
-    height: 28px;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #326789;
-    border: solid #326789 1px;
-    margin: 10px 10px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  width: 164px;
+  height: 28px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #326789;
+  border: solid #326789 1px;
+  margin: 10px 10px;
 }
 
-.exercise-radio-btn input[type=radio] {
-    appearance: none;
-    position: relative;
-    width: 16px;
-    height: 16px;
-    margin-left: 8px;
-    margin-right: 10px;
-    border: 2px solid #326789;
-    border-radius: 50%;
-    background-color: #fff;
+.exercise-radio-btn input[type='radio'] {
+  appearance: none;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  margin-right: 10px;
+  border: 2px solid #326789;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
-.exercise-radio-btn input[type="radio"]:checked::before {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 8px;
-    border: 2px solid #326789;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
+.exercise-radio-btn input[type='radio']:checked::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #326789;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
 }
 
-.exercise-radio-btn input[type=radio]:checked + label {
-    background: #326789;
-    color: #fff;
+.exercise-radio-btn input[type='radio']:checked + label {
+  background: #326789;
+  color: #fff;
 }
 
 .exercise-radio-btn.selected {
-    background-color: #326789;
+  background-color: #326789;
 }
 
 .exercise-radio-btn label {
-    margin: 0 20px 0 0;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 10px;
-    letter-spacing: 0.2px;
-    text-align: center;
-    flex: 1;
+  margin: 0 20px 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  flex: 1;
 }
 
 #reps {
-    display: flex;
-    justify-content: center;
-    margin-top: 17px;
+  display: flex;
+  justify-content: center;
+  margin-top: 17px;
 }
 
 #reps .input-box {
-    width: 210px;
-    height: 90px;
-    border-top: 0.5px solid #000000;
-    padding: 20px;
+  width: 210px;
+  height: 90px;
+  border-top: 0.5px solid #000000;
+  padding: 20px;
 }
 
 label,
 .input-box {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 10px;
-    letter-spacing: 0.2px;
-    text-align: Left;
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 10px;
+  letter-spacing: 0.2px;
+  text-align: Left;
 }
 
 #reps div select,
 #reps div input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
-    width: 88px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid #326789;
-    background-color: transparent;
-    margin-left: 50px;
-    margin-right: 5px;
+  width: 88px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid #326789;
+  background-color: transparent;
+  margin-left: 50px;
+  margin-right: 5px;
 
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 10px;
-    letter-spacing: 0.2px;
-    text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 10px;
+  letter-spacing: 0.2px;
+  text-align: center;
 }
 
 #reps div select {
-    background-image: url('arrow-1.png');
-    background-position: right center;
-    background-repeat: no-repeat;
+  background-image: url('arrow-1.png');
+  background-position: right center;
+  background-repeat: no-repeat;
 }
 
 #reps-input input {
-    color: #000000;
+  color: #000000;
 }
 
 #reps-input input::placeholder {
-    color: rgba(91, 93, 96, 0.5);
+  color: rgba(91, 93, 96, 0.5);
 }
 
-#reps-input input[type="number"]::-webkit-inner-spin-button,
-#reps-inputinput[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+#reps-input input[type='number']::-webkit-inner-spin-button,
+#reps-inputinput[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #alert-box {
-    margin-top: 5px;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 10px;
-    letter-spacing: 0.2px;
-    text-align: center;
-    color: #E65C4F;
-    border: 0px;
-    display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #e65c4f;
+  border: 0px;
+  display: none;
 }
 
 #setting-btn {
-    width: 420px;
-    height: 40px;
-    border-radius: 10px;
-    border: #326789;
-    background-color: #326789;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 10px;
-    letter-spacing: 0.2px;
-    text-align: center;
-    margin-top: 30px;
+  width: 420px;
+  height: 40px;
+  border-radius: 10px;
+  border: #326789;
+  background-color: #326789;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 10px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  margin-top: 30px;
 }
