@@ -92,16 +92,8 @@
       </div>
       <div id="reps-input" class="input-box">
         <label for="reps">1세트 당 운동 횟수</label>
-        <input
-          type="number"
-          min="1"
-          max="500"
-          value="reps"
-          placeholder="횟수 입력"
-        />회
-        <div id="alert-box" style="display: none">
-          1 이상의 값을 입력해주세요.
-        </div>
+        <input type="number" value="reps" placeholder="횟수 입력" />회
+        <div id="alert-box">1 이상, 500 이하의 숫자를 입력해주세요.</div>
       </div>
     </div>
     <button id="setting-btn" onclick="settingButtonHandler();">
