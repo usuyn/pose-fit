@@ -23,8 +23,13 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="setting.css" />
-    <script type="module" src="input.js"></script>
+    <script src="input.js"></script>
   </head>
 
   <body>
@@ -43,28 +48,28 @@
           <label for="squat">스쿼트</label>
         </div>
         <div class="exercise-radio-btn">
-          <input id="lunge" type="radio" name="exercise" value="lunge" />
+          <input id="lunge" type="radio" name="exercise" value="lunge-left" />
           <label for="lunge">런지</label>
         </div>
       </div>
       <div class="radio-group">
         <div class="exercise-radio-btn">
           <input
-            id="leg-raise"
+            id="legraise"
             type="radio"
             name="exercise"
-            value="leg-raise"
+            value="legraise-left"
           />
-          <label for="leg-raise">사이드 레그 레이즈</label>
+          <label for="legraise">사이드 레그 레이즈</label>
         </div>
         <div class="exercise-radio-btn">
           <input
-            id="lateral-raise"
+            id="lateralraise"
             type="radio"
             name="exercise"
-            value="lateral-raise"
+            value="lateralraise"
           />
-          <label for="lateral-raise">래터럴 레이즈</label>
+          <label for="lateralraise">래터럴 레이즈</label>
         </div>
       </div>
     </div>
@@ -90,13 +95,15 @@
         <input
           type="number"
           min="1"
-          max="30"
+          max="500"
           value="reps"
           placeholder="횟수 입력"
         />회
         <div id="alert-box">1 이상의 값을 입력해주세요.</div>
       </div>
     </div>
-    <button id="setting-btn">설정 하기</button>
+    <button id="setting-btn" onclick="settingButtonHandler();">
+      설정 하기
+    </button>
   </body>
 </html>
