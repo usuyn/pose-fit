@@ -12,6 +12,9 @@ window.onload = function () {
   let setsAccuracy = JSON.parse(window.localStorage.getItem('setsAccuracy'))
   setsAccuracy.push(avgAccuracy)
   window.localStorage.setItem('setsAccuracy', JSON.stringify(setsAccuracy))
+
+  let feedbackList = JSON.parse(window.localStorage.getItem('feedbackList'));
+  printFeedback(feedbackList)
 }
 
 function fillProgressBar (accuracy, barName, valueName, typeName) {
@@ -29,4 +32,15 @@ function fillProgressBar (accuracy, barName, valueName, typeName) {
 
   bar.style.strokeDashoffset = dashOffset
   bar.style.strokeDasharray = circumference
+}
+
+function printFeedback (feedbackList) {
+  let feedbackContent = document.getElementById('feedbackContent');
+
+  feedbackList.forEach((feedback, index) => {
+    let span = document.createElement('span');
+    span.textContent = (index + 1) + '. ' + feedback;
+
+    feedbackContent.appendChild(span);
+  });
 }
