@@ -1,4 +1,9 @@
 //setsAcc, minScore, meanScore, maxScore
+let setNum = Number(window.localStorage.getItem('setNum'))
+
+let minAccuracy = Number(window.localStorage.getItem('minAccuracy'))
+let maxAccuracy = Number(window.localStorage.getItem('maxAccuracy'))
+let meanAccuracy = Number(window.localStorage.getItem('set' + setNum))
 const minChart = new Highcharts.Chart('minChart', {
     chart: {
         renderTo: 'minChart',
