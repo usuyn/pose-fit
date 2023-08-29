@@ -22,6 +22,7 @@ window.onload = function () {
   prepareData()
 
   $('#inputReps').html(inputReps)
+  $('#inputSets').html(inputSets)
   init()
 }
 
