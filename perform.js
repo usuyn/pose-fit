@@ -23,6 +23,7 @@ window.onload = function () {
 
   $('#inputReps').html(inputReps)
   $('#inputSets').html(inputSets)
+  $('#setCounter').html(Number(window.localStorage.getItem('setNum')))
   init()
 }
 
