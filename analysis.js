@@ -1,5 +1,6 @@
 window.onload = function () {
   let setNum = Number(window.localStorage.getItem('setNum'))
+  let inputSets = Number(window.localStorage.getItem('inputSets'))
 
   let avgAccuracy = Number(window.localStorage.getItem('set' + setNum))
   let minAccuracy = Number(window.localStorage.getItem('minAccuracy'))
@@ -13,9 +14,16 @@ window.onload = function () {
   setsAccuracy.push(avgAccuracy)
   window.localStorage.setItem('setsAccuracy', JSON.stringify(setsAccuracy))
 
-  if(checkExerciseEnd){
+  if(setNum == inputSets){
     const nextSetBtn = document.getElementById("nextSetBtn")
+    const timer = document.getElementById("timer")
+    const timerIcon = document.getElementById("stopwatchIcon")
     nextSetBtn.style.display = "none";
+    timer.style.display = 'none';
+    timerIcon.style.display = 'none';
+  }
+  else{
+      startTimer();
   }
   
 }
@@ -37,18 +45,11 @@ function fillProgressBar (accuracy, barName, valueName, typeName) {
   bar.style.strokeDasharray = circumference
 }
 
-function checkExerciseEnd(){
-  let setNum = Number(window.localStorage.getItem(setNum))
-  let inputSets = Number(window.localStorage.getItem(inputSets))
-  //return setNum == inputSets
-  return true
-}
-
 document.addEventListener('DOMContentLoaded', function () {
   const nextSetButton = document.getElementById('nextSetBtn');
   
   nextSetButton.addEventListener('click', function () {
-      
+      clearInterval(timerInterval);
       window.location.href = 'exercise.html';
   });
 });
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const quitButton = document.getElementById('quitBtn');
   
   quitButton.addEventListener('click', function () {
-      
+      clearInterval(timerInterval);
       window.location.href = 'index.html';
   });
 });
