@@ -12,6 +12,12 @@ window.onload = function () {
   let setsAccuracy = JSON.parse(window.localStorage.getItem('setsAccuracy'))
   setsAccuracy.push(avgAccuracy)
   window.localStorage.setItem('setsAccuracy', JSON.stringify(setsAccuracy))
+
+  if(checkExerciseEnd){
+    const nextSetBtn = document.getElementById("nextSetBtn")
+    nextSetBtn.style.display = "none";
+  }
+  
 }
 
 function fillProgressBar (accuracy, barName, valueName, typeName) {
@@ -30,3 +36,28 @@ function fillProgressBar (accuracy, barName, valueName, typeName) {
   bar.style.strokeDashoffset = dashOffset
   bar.style.strokeDasharray = circumference
 }
+
+function checkExerciseEnd(){
+  let setNum = Number(window.localStorage.getItem(setNum))
+  let inputSets = Number(window.localStorage.getItem(inputSets))
+  //return setNum == inputSets
+  return true
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const nextSetButton = document.getElementById('nextSetBtn');
+  
+  nextSetButton.addEventListener('click', function () {
+      
+      window.location.href = 'exercise.html';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const quitButton = document.getElementById('quitBtn');
+  
+  quitButton.addEventListener('click', function () {
+      
+      window.location.href = 'index.html';
+  });
+});
