@@ -31,7 +31,7 @@ body {
     justify-content: flex-end;
 }
 
-#btn-confirm {
+#camera-confirm-btn {
     width: 65px;
     height: 30px;
     background-color: #326789;

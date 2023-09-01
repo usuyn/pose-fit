@@ -396,10 +396,9 @@ function startTimer() {
         timerValue--;
         if (timerValue == 0) {
             clearInterval(timerInterval);
+            window.location.href = 'exercise.html';
         }
 
         timerChart.series[0].points[0].update(timerValue);
     }, 1000);
 }
-
-document.getElementById('stopwatchIcon').addEventListener('click', startTimer);
