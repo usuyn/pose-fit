@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const gitLink = document.getElementById('git-link');
-    
+
     gitLink.addEventListener('click', function () {
         window.location.href = 'https://github.com/hippo-zone';
     });
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const settingButton = document.getElementById('setting-btn');
     
     settingButton.addEventListener('click', function () {
-        
         window.open('pose-guide-camera.html', '_blank', 'width=500px,height=501px');
+        window.opener.location.href = 'exercise.html';
         window.close();
     });
 });
@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const cameraConfirmButton = document.getElementById('camera-confirm-btn');
     
     cameraConfirmButton.addEventListener('click', function () {
-        
         window.open('pose-guide.html', '_blank', 'width=500px,height=501px');
         window.close();
     });
@@ -52,18 +51,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmButton = document.getElementById('confirm-btn');
     
     confirmButton.addEventListener('click', function () {
-        
-        window.location.href = 'exercise.html';
         window.close();
+        //window.opener.location.href = 'exercise.html';
     });
 });
 
 //  exercise.html
 document.addEventListener('DOMContentLoaded', function () {
     const quitButton = document.getElementById('quit-btn');
+    let setNum = Number(window.localStorage.getItem('setNum'))
     
     quitButton.addEventListener('click', function () {
-        
-        window.location.href = 'index.html';
+        if(setNum == 0)
+            window.location.href = 'index.html';
+        else
+            window.location.href = 'analysis.html';
     });
 });
