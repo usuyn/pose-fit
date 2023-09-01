@@ -22,6 +22,8 @@ window.onload = function () {
   prepareData()
 
   $('#inputReps').html(inputReps)
+  $('#inputSets').html(inputSets)
+  $('#setCounter').html(Number(window.localStorage.getItem('setNum')))
   init()
 }
 
@@ -90,7 +92,7 @@ async function predict () {
   if (prediction[0].probability.toFixed(2) == 1.0) {
     if (status == inputExercise) {
       count++
-      $('#counter').html(count)
+      $('#repsCounter').html(count)
 
       userAngles = checkAngles(inputExercise, userAngles)
       window.localStorage.setItem('feedbackAngles', saveAngles())
