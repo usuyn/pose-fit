@@ -8,47 +8,46 @@ window.onload = function () {
   setsAccuracy.push(avgAccuracy)
   window.localStorage.setItem('setsAccuracy', JSON.stringify(setsAccuracy))
 
-  if(setNum == inputSets){
-    const nextSetBtn = document.getElementById("nextSetBtn")
-    const timer = document.getElementById("timer")
-    const timerIcon = document.getElementById("stopwatchIcon")
-    nextSetBtn.style.display = "none";
-    timer.style.display = 'none';
-    timerIcon.style.display = 'none';
-  }
-  else{
-      startTimer();
+  if (setNum == inputSets) {
+    const nextSetBtn = document.getElementById('nextSetBtn')
+    const timer = document.getElementById('timer')
+    const timerIcon = document.getElementById('stopwatchIcon')
+    nextSetBtn.style.display = 'none'
+    timer.style.display = 'none'
+    timerIcon.style.display = 'none'
+  } else {
+    startTimer()
   }
 
-  let feedbackList = JSON.parse(window.localStorage.getItem('feedbackList'));
+  let feedbackList = JSON.parse(window.localStorage.getItem('feedbackList'))
   printFeedback(feedbackList)
 }
 
 function printFeedback (feedbackList) {
-  let feedbackContent = document.getElementById('feedbackContent');
+  let feedbackContent = document.getElementById('feedbackContent')
 
   feedbackList.forEach((feedback, index) => {
-    let span = document.createElement('span');
-    span.textContent = (index + 1) + '. ' + feedback;
+    let span = document.createElement('span')
+    span.textContent = index + 1 + '. ' + feedback
 
-    feedbackContent.appendChild(span);
-  });
+    feedbackContent.appendChild(span)
+  })
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  const nextSetButton = document.getElementById('nextSetBtn');
-  
+  const nextSetButton = document.getElementById('nextSetBtn')
+
   nextSetButton.addEventListener('click', function () {
-      clearInterval(timerInterval);
-      window.location.href = 'exercise.html';
-  });
-});
+    clearInterval(timerInterval)
+    window.location.href = 'exercise.html'
+  })
+})
 
 document.addEventListener('DOMContentLoaded', function () {
-  const quitButton = document.getElementById('quitBtn');
-  
+  const quitButton = document.getElementById('quitBtn')
+
   quitButton.addEventListener('click', function () {
-      clearInterval(timerInterval);
-      window.location.href = 'index.html';
-  });
-});
+    clearInterval(timerInterval)
+    window.location.href = 'index.html'
+  })
+})

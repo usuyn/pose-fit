@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
 
 body {
   font-family: Pretendard;
@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
   background-color: white;
   align-items: center;
-  box-shadow: 0px 4px 10px 0px #7C8DA526;
+  box-shadow: 0px 4px 10px 0px #7c8da526;
   z-index: 1;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .tab-item:hover {
-  background-color: #E9EEF4;
+  background-color: #e9eef4;
   color: #326789;
 }
 
@@ -50,7 +50,7 @@ body {
   margin-right: 100px;
   padding: 10px 15px;
   background-color: #326789;
-  color: #E9EEF4;
+  color: #e9eef4;
   font-weight: 700;
   font-size: 20px;
   line-height: 18px;
@@ -69,7 +69,7 @@ body {
 #intro {
   width: 100%;
   height: 1020px;
-  background-color: #E9EEF4;
+  background-color: #e9eef4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,7 +93,7 @@ body {
 }
 
 .highlight {
-  color: #E65C4F;
+  color: #e65c4f;
 }
 
 #intro img {
@@ -150,7 +150,7 @@ body {
   height: 455px;
   margin: 15px;
   padding: 30px;
-  background-color: #E9EEF4;
+  background-color: #e9eef4;
   position: relative;
   overflow: hidden;
   border-radius: 5px;
@@ -168,7 +168,7 @@ body {
   position: absolute;
   top: 110px;
   left: 30px;
-  color: #6F7A89;
+  color: #6f7a89;
   font-size: 20px;
   font-weight: 500;
   line-height: 25px;
@@ -180,7 +180,7 @@ body {
   position: absolute;
   bottom: 40px;
   left: 30px;
-  color: #6F7A89;
+  color: #6f7a89;
   font-size: 15px;
   font-weight: 500;
   line-height: 20px;
@@ -194,14 +194,14 @@ body {
   border-radius: 5px;
 }
 
-#content1-img{
+#content1-img {
   width: 370px;
   height: 220px;
   bottom: 42px;
   right: 38px;
 }
 
-#service div:nth-child(2) img{
+#service div:nth-child(2) img {
   width: 400px;
   height: 225px;
 }
@@ -216,7 +216,7 @@ body {
   right: 38px;
 }
 
-#service div:nth-child(3) img{
+#service div:nth-child(3) img {
   width: 345px;
   height: 195px;
 }
@@ -244,7 +244,7 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: #E9EEF4;
+  background-color: #e9eef4;
   padding: 30px 300px 10px 300px;
   position: relative;
   margin-top: 60px;
