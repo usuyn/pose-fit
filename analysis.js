@@ -15,6 +15,8 @@ window.onload = function () {
     nextSetBtn.style.display = 'none'
     timer.style.display = 'none'
     timerIcon.style.display = 'none'
+
+    window.localStorage.clear()
   } else {
     startTimer()
   }
