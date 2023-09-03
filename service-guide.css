@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
 
 body {
   font-family: Pretendard;
@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
   background-color: white;
   align-items: center;
-  box-shadow: 0px 4px 10px 0px #7C8DA526;
+  box-shadow: 0px 4px 10px 0px #7c8da526;
   z-index: 1;
 }
 
@@ -24,7 +24,6 @@ body {
   line-height: 32px;
   letter-spacing: 0.2px;
   text-align: center;
-
 }
 
 #tab-items {
@@ -40,11 +39,10 @@ body {
   line-height: 18px;
   letter-spacing: 0.2px;
   text-align: left;
-
 }
 
 .tab-item:hover {
-  background-color: #E9EEF4;
+  background-color: #e9eef4;
   color: #326789;
 }
 
@@ -53,7 +51,7 @@ body {
   padding: 5px 10px;
   padding: 10px 15px;
   background-color: #326789;
-  color: #E9EEF4;
+  color: #e9eef4;
   font-size: 20px;
   font-weight: 700;
   line-height: 18px;
@@ -75,7 +73,7 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: #E9EEF4;
+  background-color: #e9eef4;
   padding: 30px 300px 10px 300px;
   position: relative;
 }
