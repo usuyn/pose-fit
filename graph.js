@@ -1,4 +1,11 @@
-//setsAcc, minScore, meanScore, maxScore
+//setsAccuracy, minAccuracy, meanAccuracy, maxAccuracy
+let setNum = Number(window.localStorage.getItem('setNum'))
+
+let minAccuracy = Number(window.localStorage.getItem('minAccuracy'))
+let maxAccuracy = Number(window.localStorage.getItem('maxAccuracy'))
+let meanAccuracy = Number(window.localStorage.getItem('set' + setNum))
+let setsAccuracy = JSON.parse(window.localStorage.getItem('setsAccuracy'));
+
 const minChart = new Highcharts.Chart('minChart', {
     chart: {
         renderTo: 'minChart',
@@ -60,7 +67,7 @@ const minChart = new Highcharts.Chart('minChart', {
             {
                 radius: '112%',
                 innerRadius: '90%',
-                y: minScore
+                y: minAccuracy
             }
         ],
 
@@ -138,7 +145,7 @@ const meanChart = new Highcharts.Chart('meanChart', {
             {
                 radius: '112%',
                 innerRadius: '90%',
-                y: meanScore
+                y: meanAccuracy
             }
         ],
 
@@ -216,7 +223,7 @@ let maxChart = new Highcharts.Chart('maxChart', {
             {
                 radius: '112%',
                 innerRadius: '90%',
-                y: maxScore
+                y: maxAccuracy
             }
         ],
 
@@ -259,7 +266,7 @@ let setsGraph = new Highcharts.Chart('setsAccuracyGraph', {
     },
 
     xAxis: {
-        categories: Array.from({ length: setsAcc.length }, (_, i) => `${i + 1}`),
+        categories: Array.from({ length: setsAccuracy.length }, (_, i) => `${i + 1}`),
         lineColor: '#B0B0B0',
         gridLineColor: '#B0B0B0',
         gridLineWidth: 1,
@@ -303,7 +310,7 @@ let setsGraph = new Highcharts.Chart('setsAccuracyGraph', {
     },
 
     series: [{
-        data: setsAcc,
+        data: setsAccuracy,
         color: '#326789'
     }]
 })
@@ -389,10 +396,9 @@ function startTimer() {
         timerValue--;
         if (timerValue == 0) {
             clearInterval(timerInterval);
+            window.location.href = 'exercise.html';
         }
 
         timerChart.series[0].points[0].update(timerValue);
     }, 1000);
 }
-
-document.getElementById('stopwatchIcon').addEventListener('click', startTimer);
