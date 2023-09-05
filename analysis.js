@@ -39,17 +39,13 @@ function printFeedback (feedbackList) {
 function nextSetButtonHandler () {
   const nextSetButton = document.getElementById('nextSetBtn')
 
-  nextSetButton.addEventListener('click', function () {
-    clearInterval(timerInterval)
-    window.location.href = 'exercise.html'
-  })
+  clearInterval(timerInterval)
+  window.location.href = 'exercise.html'
 }
 
 function quitButtonHandler () {
   const quitButton = document.getElementById('quitBtn')
 
-  quitButton.addEventListener('click', function () {
-    clearInterval(timerInterval)
-    window.location.href = 'index.html'
-  })
+  clearInterval(timerInterval)
+  window.location.href = 'index.html'
 }
