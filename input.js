@@ -26,7 +26,7 @@ function settingButtonHandler() {
   ).val();
   let inputReps = $("#reps-input input[type='number']").val();
   let inputSets = $("#sets-input select[name='sets']").val();
-  let exerciseButton = document.getElementById("exercise-btn");
+  let settingButton = document.getElementById("setting-btn");
 
   if (!numberRegex.test(inputReps)) {
     $("#alert-box").show();
@@ -38,7 +38,9 @@ function settingButtonHandler() {
   window.localStorage.setItem("inputReps", inputReps);
   window.localStorage.setItem("inputSets", inputSets);
 
-  exerciseButton.addEventListener("click", function () {
-    window.open("setting.html", "_blank", "width=550px,height=450px");
+  settingButton.addEventListener("click", function () {
+    window.open("pose-guide-camera.html", "_blank", "width=500px,height=501px");
+    window.opener.location.href = "exercise.html";
+    window.close();
   });
 }

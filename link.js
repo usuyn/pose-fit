@@ -25,23 +25,20 @@ function gitHubButtonHandler() {
   });
 }
 
-//  setting.html
-function settingButtonHandler() {
-  const settingButton = document.getElementById("setting-btn");
-
-  settingButton.addEventListener("click", function () {
-    window.open("pose-guide-camera.html", "_blank", "width=500px,height=501px");
-    window.opener.location.href = "exercise.html";
-    window.close();
-  });
-}
-
 //  pose-guide-camera.html
 function cameraConfirmButtonHandler() {
   const cameraConfirmButton = document.getElementById("camera-confirm-btn");
 
   cameraConfirmButton.addEventListener("click", function () {
     window.open("pose-guide.html", "_blank", "width=500px,height=501px");
+    window.close();
+  });
+}
+
+function closeButtonButtonHandler() {
+  const closeButton = document.getElementById("close-btn");
+
+  closeButton.addEventListener("click", function () {
     window.close();
   });
 }
