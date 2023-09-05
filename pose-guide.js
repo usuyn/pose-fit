@@ -1,19 +1,19 @@
 window.onload = function () {
-  poseGuideImageChange();
-};
+  poseGuideImageChange()
+}
 
-function poseGuideImageChange() {
-  let inputExercise = window.localStorage.getItem("inputExercise");
-  let poseImg = document.getElementById("pose-img");
+function poseGuideImageChange () {
+  let inputExercise = window.localStorage.getItem('inputExercise')
+  let poseImg = document.getElementById('pose-img')
 
   const exerciseImages = {
-    squat: "pose-squat",
-    "lunge-left": "pose-lunge",
-    "legraise-left": "pose-side-leg-raise",
-    lateralraise: "pose-lateral-raise",
-  };
+    squat: 'pose-squat',
+    'lunge-left': 'pose-lunge',
+    'legraise-left': 'pose-side-leg-raise',
+    lateralraise: 'pose-lateral-raise'
+  }
 
   if (exerciseImages[inputExercise]) {
-    poseImg.src = exerciseImages[inputExercise] + ".png";
+    poseImg.src = exerciseImages[inputExercise] + '.png'
   }
 }
