@@ -1,3 +1,5 @@
+import { startTimer, timerInterval } from "./graph.js";
+
 window.onload = function () {
   let setNum = Number(window.localStorage.getItem("setNum"));
   let inputSets = Number(window.localStorage.getItem("inputSets"));
