@@ -32,8 +32,11 @@ function quitButtonHandler () {
   let setNum = Number(window.localStorage.getItem('setNum'))
   window.localStorage.setItem('inputSets', setNum)
 
-  if (setNum == 0) window.location.href = 'index.html'
-  else window.location.href = 'analysis.html'
+  if (setNum == 1) {
+    window.location.href = 'index.html'
+  } else {
+    window.location.href = 'analysis.html'
+  }
 }
 
 function nextSetButtonHandler () {
