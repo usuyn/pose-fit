@@ -33,6 +33,7 @@ function quitButtonHandler () {
   window.localStorage.setItem('inputSets', setNum)
 
   if (setNum == 1) {
+    window.localStorage.clear()
     window.location.href = 'index.html'
   } else {
     window.location.href = 'analysis.html'
