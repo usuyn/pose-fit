@@ -35,13 +35,3 @@ function printFeedback (feedbackList) {
     feedbackContent.appendChild(span)
   })
 }
-
-function nextSetButtonHandler () {
-  clearInterval(timerInterval)
-  window.location.href = 'exercise.html'
-}
-
-function quitButtonHandler () {
-  clearInterval(timerInterval)
-  window.location.href = 'index.html'
-}

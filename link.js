@@ -35,3 +35,13 @@ function quitButtonHandler () {
   if (setNum == 0) window.location.href = 'index.html'
   else window.location.href = 'analysis.html'
 }
+
+function nextSetButtonHandler () {
+  clearInterval(timerInterval)
+  window.location.href = 'exercise.html'
+}
+
+function quitButtonHandler () {
+  clearInterval(timerInterval)
+  window.location.href = 'index.html'
+}
