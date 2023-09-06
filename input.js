@@ -36,9 +36,7 @@ function settingButtonHandler () {
   window.localStorage.setItem('inputReps', inputReps)
   window.localStorage.setItem('inputSets', inputSets)
 
-  settingButton.addEventListener('click', function () {
-    window.open('pose-guide-camera.html', '_blank', 'width=500px,height=501px')
-    window.opener.location.href = 'exercise.html'
-    window.close()
-  })
+  window.open('pose-guide-camera.html', '_blank', 'width=500px,height=501px')
+  window.opener.location.href = 'exercise.html'
+  window.close()
 }
