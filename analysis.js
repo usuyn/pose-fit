@@ -37,15 +37,11 @@ function printFeedback (feedbackList) {
 }
 
 function nextSetButtonHandler () {
-  const nextSetButton = document.getElementById('nextSetBtn')
-
   clearInterval(timerInterval)
   window.location.href = 'exercise.html'
 }
 
 function quitButtonHandler () {
-  const quitButton = document.getElementById('quitBtn')
-
   clearInterval(timerInterval)
   window.location.href = 'index.html'
 }

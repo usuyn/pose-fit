@@ -293,7 +293,7 @@ let setsGraph = new Highcharts.Chart('setsAccuracyGraph', {
   },
 
   yAxis: {
-    min: 20,
+    min: 0,
     max: 100,
     tickInterval: 20,
     gridLineColor: '#B0B0B0',
