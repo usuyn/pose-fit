@@ -1,4 +1,3 @@
-//setsAccuracy, minAccuracy, meanAccuracy, maxAccuracy
 let setNum = Number(window.localStorage.getItem('setNum'))
 
 let minAccuracy = Number(window.localStorage.getItem('minAccuracy'))

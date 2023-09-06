@@ -24,7 +24,6 @@ function settingButtonHandler () {
   let inputExercise = $(".exercise-radio-btn input[type='radio']:checked").val()
   let inputReps = $("#reps-input input[type='number']").val()
   let inputSets = $("#sets-input select[name='sets']").val()
-  let settingButton = document.getElementById('setting-btn')
 
   if (!numberRegex.test(inputReps)) {
     $('#alert-box').show()
