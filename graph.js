@@ -1,8 +1,12 @@
+let stop = window.localStorage.getItem('inputSets') ? false : true
+
 let setNum = Number(window.localStorage.getItem('setNum'))
 
-let minAccuracy = Number(window.localStorage.getItem('minAccuracy'))
-let maxAccuracy = Number(window.localStorage.getItem('maxAccuracy'))
-let meanAccuracy = Number(window.localStorage.getItem('set' + setNum))
+let minAccuracy = stop ? 0 : Number(window.localStorage.getItem('minAccuracy'))
+let maxAccuracy = stop ? 0 : Number(window.localStorage.getItem('maxAccuracy'))
+let meanAccuracy = stop
+  ? 0
+  : Number(window.localStorage.getItem('set' + setNum))
 let setsAccuracy = JSON.parse(window.localStorage.getItem('setsAccuracy'))
 
 const minChart = new Highcharts.Chart('minChart', {
