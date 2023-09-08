@@ -30,9 +30,10 @@ function confirmButtonHandler () {
 //  exercise.html
 function exerciseQuitButtonHandler () {
   let setNum = Number(window.localStorage.getItem('setNum'))
-  window.localStorage.setItem('inputSets', setNum)
+  window.localStorage.removeItem('inputSets')
 
   if (setNum == 1) {
+    window.localStorage.clear()
     window.location.href = 'index.html'
   } else {
     window.location.href = 'analysis.html'

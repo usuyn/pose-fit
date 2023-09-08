@@ -41,12 +41,12 @@ const angleIndex = {
 
   'lunge-left': {
     index1: [index.rightHip, index.rightShoulder, index.rightKnee],
-    index2: [index.rightKnee, index.rightHip, index.rightAnkle]
+    index2: [index.leftKnee, index.leftHip, index.leftAnkle]
   },
 
   'lunge-right': {
     index1: [index.leftHip, index.leftShoulder, index.leftKnee],
-    index2: [index.leftKnee, index.leftHip, index.leftAnkle]
+    index2: [index.rightKnee, index.rightHip, index.rightAnkle]
   }
 }
 
@@ -58,8 +58,8 @@ const scoreInfo = {
   },
 
   lateralraise: {
-    left: [90, 5, 45, 110],
-    right: [90, 5, 45, 110]
+    left: [100, 5, 45, 120],
+    right: [100, 5, 45, 120]
   },
 
   'legraise-left': {
