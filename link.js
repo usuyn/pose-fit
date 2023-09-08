@@ -28,7 +28,7 @@ function confirmButtonHandler () {
 }
 
 //  exercise.html
-function quitButtonHandler () {
+function exerciseQuitButtonHandler () {
   let setNum = Number(window.localStorage.getItem('setNum'))
   window.localStorage.setItem('inputSets', setNum)
 
