@@ -161,6 +161,9 @@ body {
 
 .step-content > img {
   margin: 55px;
+}
+
+.shadow {
   border: 1px solid #e9eef4;
   border-radius: 10px;
   box-shadow: 4px 4px 4px 2px #00000033;
@@ -179,27 +182,22 @@ body {
 
 #step1-detail img {
   width: 791px;
-  height: 496px;
 }
 
 #step2-detail img {
   width: 520px;
-  height: 400px;
 }
 
 #step3-detail img {
   width: 339px;
-  height: 339px;
 }
 
 #step4-detail img {
   width: 836px;
-  height: 471px;
 }
 
 #step5-detail img {
   width: 851px;
-  height: 479px;
 }
 
 .highlight {
