@@ -5,7 +5,7 @@ body {
 }
 
 #tab-bar {
-  height: 93px;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -38,28 +38,29 @@ body {
 }
 
 #container {
+  height: 90vh;
   display: flex;
 }
 
 #web-cam {
-  width: 1250px;
-  height: 987px;
+  width: 60vw;
+  height: 90vh;
   position: relative;
 }
 
 #cam-canvas {
-  height: 600px;
-  width: 600px;
+  height: 550px;
+  width: 550px;
   position: absolute;
-  top: 93px;
-  left: 225px;
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #e9eef4;
 }
 
 #exercise-info {
-  width: 670px;
-  height: 987px;
+  width: 30vw;
+  height: 90vh;
   display: flex;
 }
 
