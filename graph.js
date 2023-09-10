@@ -14,8 +14,8 @@ const minChart = new Highcharts.Chart('minChart', {
     renderTo: 'minChart',
     type: 'solidgauge',
     backgroundColor: 'transparent',
-    width: 230,
-    height: 230
+    width: 180,
+    height: 180
   },
 
   credits: {
@@ -25,7 +25,7 @@ const minChart = new Highcharts.Chart('minChart', {
   title: {
     text: '최소',
     style: {
-      fontSize: '23px',
+      fontSize: '20px',
       fontWeight: 600
     }
   },
@@ -79,11 +79,11 @@ const minChart = new Highcharts.Chart('minChart', {
       dataLabels: {
         enabled: true,
         style: {
-          fontSize: '40px',
-          fontWeight: 800,
+          fontSize: '30px',
+          fontWeight: 600,
           letterSpacing: '2px'
         },
-        y: -30,
+        y: -25,
         borderWidth: 0
       }
     }
@@ -95,8 +95,8 @@ const meanChart = new Highcharts.Chart('meanChart', {
     renderTo: 'meanChart',
     type: 'solidgauge',
     backgroundColor: 'transparent',
-    width: 230,
-    height: 230
+    width: 180,
+    height: 180
   },
 
   credits: {
@@ -106,7 +106,7 @@ const meanChart = new Highcharts.Chart('meanChart', {
   title: {
     text: '평균',
     style: {
-      fontSize: '23px',
+      fontSize: '20px',
       fontWeight: 600
     }
   },
@@ -160,11 +160,11 @@ const meanChart = new Highcharts.Chart('meanChart', {
       dataLabels: {
         enabled: true,
         style: {
-          fontSize: '40px',
-          fontWeight: 800,
+          fontSize: '30px',
+          fontWeight: 600,
           letterSpacing: '2px'
         },
-        y: -30,
+        y: -25,
         borderWidth: 0
       }
     }
@@ -176,8 +176,8 @@ let maxChart = new Highcharts.Chart('maxChart', {
     renderTo: 'maxChart',
     type: 'solidgauge',
     backgroundColor: 'transparent',
-    width: 230,
-    height: 230
+    width: 180,
+    height: 180
   },
 
   credits: {
@@ -187,7 +187,7 @@ let maxChart = new Highcharts.Chart('maxChart', {
   title: {
     text: '최대',
     style: {
-      fontSize: '23px',
+      fontSize: '20px',
       fontWeight: 600
     }
   },
@@ -241,11 +241,11 @@ let maxChart = new Highcharts.Chart('maxChart', {
       dataLabels: {
         enabled: true,
         style: {
-          fontSize: '40px',
-          fontWeight: 800,
+          fontSize: '30px',
+          fontWeight: 600,
           letterSpacing: '2px'
         },
-        y: -30,
+        y: -25,
         borderWidth: 0
       }
     }
@@ -257,7 +257,7 @@ let setsGraph = new Highcharts.Chart('setsAccuracyGraph', {
     renderTo: 'setsAccuracyGraph',
     type: 'spline',
     backgroundColor: 'transparent',
-    width: 700,
+    width: 600,
     height: 350
   },
 
@@ -397,11 +397,11 @@ const timerChart = Highcharts.chart('timer', {
       dataLabels: {
         enabled: true,
         style: {
-          fontSize: '40px',
-          fontWeight: 800,
+          fontSize: '30px',
+          fontWeight: 600,
           letterSpacing: '2px'
         },
-        y: -30,
+        y: -25,
         borderWidth: 0
       }
     }
