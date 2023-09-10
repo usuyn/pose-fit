@@ -35,13 +35,13 @@ function prepareResult () {
 }
 
 function printFeedback (feedbackList) {
-  let feedbackContent = document.getElementById('feedbackContent')
+  let feedbackContent = document.getElementById('feedbackList')
 
   feedbackList.forEach((feedback, index) => {
-    let span = document.createElement('span')
-    span.textContent = index + 1 + '. ' + feedback
+    let li = document.createElement('li')
+    li.textContent = feedback
 
-    feedbackContent.appendChild(span)
+    feedbackContent.appendChild(li)
   })
 }
 

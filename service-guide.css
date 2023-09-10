@@ -48,16 +48,20 @@ body {
 
 #tab-bar button {
   margin-right: 100px;
-  padding: 5px 10px;
-  padding: 10px 15px;
+  padding: 13px 25px;
   background-color: #326789;
-  color: #e9eef4;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: 0.3px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
   text-align: center;
   border: none;
+  box-shadow: 0px 3px 5px 0px rgba(55, 64, 70, 0.3);
+}
+
+#exercise-btn:hover {
+  background-color: #264b63;
 }
 
 #main-content {
@@ -161,6 +165,9 @@ body {
 
 .step-content > img {
   margin: 55px;
+}
+
+.shadow {
   border: 1px solid #e9eef4;
   border-radius: 10px;
   box-shadow: 4px 4px 4px 2px #00000033;
@@ -179,27 +186,22 @@ body {
 
 #step1-detail img {
   width: 791px;
-  height: 496px;
 }
 
 #step2-detail img {
   width: 520px;
-  height: 400px;
 }
 
 #step3-detail img {
   width: 339px;
-  height: 339px;
 }
 
 #step4-detail img {
   width: 836px;
-  height: 471px;
 }
 
 #step5-detail img {
   width: 851px;
-  height: 479px;
 }
 
 .highlight {

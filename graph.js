@@ -374,8 +374,8 @@ const timerChart = Highcharts.chart('timer', {
             y2: 1
           },
           stops: [
-            [0, '#78A6C8'],
-            [1, '#326789']
+            [0, '#ffffff'],
+            [1, '#e65c4f']
           ]
         }
       ]
