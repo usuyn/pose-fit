@@ -135,7 +135,7 @@ label,
 }
 
 #reps div select {
-  background-image: url('arrow-1.png');
+  background-image: url('arrow.svg');
   background-position: right center;
   background-repeat: no-repeat;
 }
