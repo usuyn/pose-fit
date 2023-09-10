@@ -172,7 +172,7 @@ label,
   border-radius: 10px;
   border: #326789;
   background-color: #326789;
-  color: #fff;
+  color: #ffffff;
   font-weight: bold;
   text-align: center;
   font-size: 15px;
@@ -181,4 +181,8 @@ label,
   letter-spacing: 0.2px;
   text-align: center;
   margin-top: 30px;
+}
+
+#setting-btn:hover {
+  background-color: #264b63;
 }

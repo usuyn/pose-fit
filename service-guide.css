@@ -48,16 +48,20 @@ body {
 
 #tab-bar button {
   margin-right: 100px;
-  padding: 5px 10px;
-  padding: 10px 15px;
+  padding: 13px 25px;
   background-color: #326789;
-  color: #e9eef4;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: 0.3px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
   text-align: center;
   border: none;
+  box-shadow: 0px 3px 5px 0px rgba(55, 64, 70, 0.3);
+}
+
+#exercise-btn:hover {
+  background-color: #264b63;
 }
 
 #main-content {

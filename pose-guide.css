@@ -30,7 +30,7 @@ body {
   width: 65px;
   height: 30px;
   background-color: #326789;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   margin: 20px 30px 0 0;
   font-size: 15px;
@@ -39,4 +39,9 @@ body {
   letter-spacing: 3px;
   text-align: center;
   border: none;
+  box-shadow: 0px 3px 5px 0px rgba(55, 64, 70, 0.3);
+}
+
+#confirm-btn:hover {
+  background-color: #264b63;
 }
