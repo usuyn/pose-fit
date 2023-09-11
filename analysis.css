@@ -124,12 +124,15 @@ body {
 } */
 
 #feedbackContent {
-  padding: 20px;
+  height: 20vh;
+  padding: 5px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
 
 #feedbackList {
-  margin: auto;
+  margin: auto 0;
 }
 
 #feedbackList li {
