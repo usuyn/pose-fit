@@ -47,5 +47,6 @@ function nextSetButtonHandler () {
 
 function quitButtonHandler () {
   clearInterval(timerInterval)
+  window.localStorage.clear()
   window.location.href = 'index.html'
 }
