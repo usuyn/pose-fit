@@ -48,7 +48,7 @@ body {
 }
 
 #web-cam {
-  width: 60vw;
+  width: 57vw;
   height: 90vh;
   position: relative;
 }
@@ -64,19 +64,19 @@ body {
 }
 
 #exercise-info {
-  width: 30vw;
-  height: 90vh;
+  width: 35vw;
+  height: 40vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
 }
 
 .counter {
-  height: 246px;
-  position: absolute;
-  left: 70%;
-  transform: translate(-50%, -50%);
   font-size: 2rem;
   display: flex;
   align-items: center;
+  margin: auto;
 }
 
 .info-left {
@@ -87,15 +87,7 @@ body {
 }
 
 .info-right {
-  font-size: 66px;
+  font-size: 63px;
   font-weight: 800;
   letter-spacing: 3px;
-}
-
-#sets {
-  top: 40%;
-}
-
-#reps {
-  top: 60%;
 }
