@@ -53,33 +53,33 @@ const angleIndex = {
 // 올바른 각도, 각도 간격, 최소, 최대
 const scoreInfo = {
   squat: {
-    upper: [70, 10, 10, 100],
-    lower: [85, 5, 30, 140]
+    upper: [75, 10, 10, 100],
+    lower: [75, 5, 30, 140]
   },
 
   lateralraise: {
-    left: [100, 5, 45, 120],
-    right: [100, 5, 45, 120]
+    left: [95, 5, 45, 130],
+    right: [95, 5, 45, 130]
   },
 
   'legraise-left': {
     upper: [180, 5, 150, 185],
-    lower: [50, 5, 30, 90]
+    lower: [60, 5, 30, 90]
   },
 
   'legraise-right': {
     upper: [180, 5, 150, 185],
-    lower: [50, 5, 30, 90]
+    lower: [60, 5, 30, 90]
   },
 
   'lunge-left': {
-    upper: [90, 5, 70, 110],
-    lower: [90, 5, 60, 110]
+    upper: [90, 10, 70, 110],
+    lower: [75, 10, 60, 110]
   },
 
   'lunge-right': {
-    upper: [90, 5, 70, 110],
-    lower: [90, 5, 60, 110]
+    upper: [90, 10, 70, 110],
+    lower: [75, 10, 60, 110]
   }
 }
 
