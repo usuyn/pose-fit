@@ -5,6 +5,7 @@ function tabItemHandler (element) {
 }
 
 function indexExerciseButtonHandler () {
+  window.localStorage.clear()
   window.open('setting.html', '_blank', 'width=550px,height=450px')
 }
 
