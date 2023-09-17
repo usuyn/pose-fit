@@ -55,17 +55,22 @@ async function init () {
 
   model = await tmPose.load(modelPath, metadataPath)
 
-  const size = 500
-  const flip = true
-  webcam = new tmPose.Webcam(size, size, flip)
-  await webcam.setup()
-  await webcam.play()
-  window.requestAnimationFrame(loop)
+  try {
+    const size = 500
+    const flip = true
+    webcam = new tmPose.Webcam(size, size, flip)
+    await webcam.setup()
+    await webcam.play()
+    window.requestAnimationFrame(loop)
 
-  const canvas = document.getElementById('cam-canvas')
-  canvas.width = size
-  canvas.height = size
-  ctx = canvas.getContext('2d')
+    const canvas = document.getElementById('cam-canvas')
+    canvas.width = size
+    canvas.height = size
+    ctx = canvas.getContext('2d')
+  } catch (error) {
+    window.location.href = 'index.html'
+    window.localStorage.clear()
+  }
 }
 
 async function loop (timestamp) {
