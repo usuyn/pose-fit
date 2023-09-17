@@ -55,17 +55,23 @@ async function init () {
 
   model = await tmPose.load(modelPath, metadataPath)
 
-  const size = 500
-  const flip = true
-  webcam = new tmPose.Webcam(size, size, flip)
-  await webcam.setup()
-  await webcam.play()
-  window.requestAnimationFrame(loop)
+  try {
+    const size = 500
+    const flip = true
+    webcam = new tmPose.Webcam(size, size, flip)
+    await webcam.setup()
+    await webcam.play()
+    window.requestAnimationFrame(loop)
 
-  const canvas = document.getElementById('cam-canvas')
-  canvas.width = size
-  canvas.height = size
-  ctx = canvas.getContext('2d')
+    const canvas = document.getElementById('cam-canvas')
+    canvas.width = size
+    canvas.height = size
+    ctx = canvas.getContext('2d')
+  } catch (error) {
+    alert('카메라 권한이 거부되어 운동을 시작할 수 없습니다!')
+    window.localStorage.clear()
+    window.location.href = 'index.html'
+  }
 }
 
 async function loop (timestamp) {
