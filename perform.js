@@ -68,8 +68,9 @@ async function init () {
     canvas.height = size
     ctx = canvas.getContext('2d')
   } catch (error) {
-    window.location.href = 'index.html'
+    alert('카메라 권한이 거부되어 운동을 시작할 수 없습니다!')
     window.localStorage.clear()
+    window.location.href = 'index.html'
   }
 }
 
