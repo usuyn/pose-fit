@@ -49,6 +49,14 @@ function prepareData () {
   inputSets = Number(window.localStorage.getItem('inputSets'))
 }
 
+const cameraDeniedToast = Swal.mixin({
+  toast: true,
+  position: 'center-center',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true
+})
+
 async function init () {
   const modelPath = models[inputExercise] + 'model.json'
   const metadataPath = models[inputExercise] + 'metadata.json'
@@ -68,7 +76,10 @@ async function init () {
     canvas.height = size
     ctx = canvas.getContext('2d')
   } catch (error) {
-    alert('카메라 권한이 거부되어 운동을 시작할 수 없습니다!')
+    await cameraDeniedToast.fire({
+      icon: 'error',
+      title: '카메라 권한이 거부되어 운동을 시작할 수 없습니다!'
+    })
     window.localStorage.clear()
     window.location.href = 'index.html'
   }
