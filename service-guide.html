@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/earlyaccess/notosanskr.css"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="service-guide.css" />
+    <script src="link.js"></script>
+  </head>
+
+  <body>
+    <div id="tab-bar">
+      <h1>POSE FIT</h1>
+      <div id="tab-items">
+        <div
+          class="tab-item"
+          data-page="index.html"
+          onclick="tabItemHandler(this)"
+        >
+          POSE FIT 프로젝트
+        </div>
+        <div
+          class="tab-item"
+          data-page="service-guide.html"
+          onclick="tabItemHandler(this)"
+        >
+          POSE FIT 서비스 사용법
+        </div>
+      </div>
+      <button id="exercise-btn" onclick="indexExerciseButtonHandler()">
+        운동 하기
+      </button>
+    </div>
+    <div id="main-content">
+      <div id="intro">
+        <div id="intro-title">
+          <p>
+            <span class="main-blue">POSE FIT</span><br />
+            서비스 사용법
+          </p>
+        </div>
+        <div id="step-summary">
+          <div class="step-circle-wrapper">
+            <div class="step-circle">
+              <p>STEP<br /></p>
+              <p>01</p>
+            </div>
+            <p>운동하기 버튼 클릭</p>
+          </div>
+          <div class="arrow-wrapper">
+            <img class="arrow" src="right-arrow.svg" />
+          </div>
+          <div class="step-circle-wrapper">
+            <div class="step-circle">
+              <p>STEP<br /></p>
+              <p>02</p>
+            </div>
+            <p>운동 프로그램 설정</p>
+          </div>
+          <div class="arrow-wrapper">
+            <img class="arrow" src="right-arrow.svg" />
+          </div>
+          <div class="step-circle-wrapper">
+            <div class="step-circle">
+              <p>STEP<br /></p>
+              <p>03</p>
+            </div>
+            <p>운동 환경 조성</p>
+          </div>
+          <div class="arrow-wrapper">
+            <img class="arrow" src="right-arrow.svg" />
+          </div>
+          <div class="step-circle-wrapper">
+            <div class="step-circle">
+              <p>STEP<br /></p>
+              <p>04</p>
+            </div>
+            <p>운동 수행</p>
+          </div>
+          <div class="arrow-wrapper">
+            <img class="arrow" src="right-arrow.svg" />
+          </div>
+          <div class="step-circle-wrapper">
+            <div class="step-circle">
+              <p>STEP<br /></p>
+              <p>05</p>
+            </div>
+            <p>운동 결과 확인</p>
+          </div>
+        </div>
+      </div>
+      <div id="step1-detail" class="step-content">
+        <div class="step-title">
+          <h1>STEP <span class="main-blue">01</span><br /></h1>
+          <h2>운동하기 버튼 클릭</h2>
+        </div>
+        <img class="shadow" src="start-page-guide.svg" />
+        <p>
+          POSE FIT 사이트에 접속하여 상단 탭바 혹은 하단의 "<span
+            class="highlight"
+            >운동하기</span
+          >" 버튼을 클릭하여 주세요.
+        </p>
+      </div>
+      <div id="step2-detail" class="step-content">
+        <div class="step-title">
+          <h1>STEP <span class="main-blue">02</span><br /></h1>
+          <h2>운동 프로그램 설정</h2>
+        </div>
+        <img class="shadow" src="setting-img.svg" />
+        <p>
+          개인 운동 역량에 맞춰 운동 프로그램을 설정해주세요<br />
+          스쿼트, 런지, 사이드 레그 레이즈, 래터럴 레이즈 중 원하는
+          <span class="highlight">운동 종목을 1가지 선택</span>한 후,<br />
+          <span class="highlight">목표 세트 수</span>와
+          <span class="highlight">1세트 당 운동 횟수</span>를 설정해주세요<br />
+          1세트 당 운동 횟수는 최대 500회까지 설정할 수 있습니다
+        </p>
+      </div>
+      <div id="step3-detail" class="step-content">
+        <div class="step-title">
+          <h1>STEP <span class="main-blue">03</span><br /></h1>
+          <h2>운동 환경 조성</h2>
+        </div>
+        <img src="exercise-env-img.svg" />
+        <p>
+          운동을 위한 충분한 공간을 확보하고<br />
+          웹 카메라 화면에
+          <span class="highlight">전신이 모두 보이도록 </span>카메라 각도를
+          조절해주세요
+        </p>
+      </div>
+      <div id="step4-detail" class="step-content">
+        <div class="step-title">
+          <h1>STEP <span class="main-blue">04</span><br /></h1>
+          <h2>운동 수행</h2>
+        </div>
+        <img class="shadow" src="exercise-img.svg" />
+        <p>
+          화면을 통해 본인의 운동 자세를 확인하며<br />
+          설정한 1세트 당 목표 횟수까지 운동을 수행해주세요<br />
+          운동을 수행하면
+          <span class="highlight">자동으로 운동을 인식하여 횟수가 업데이트</span
+          >됩니다<br />
+          목표 횟수까지 운동을 완료하면 자동으로 운동 분석 페이지로
+          이동합니다<br />
+          <br />
+          화면에 본인의 모습이 나오지 않으면 카메라 접근 권한을 허용해주세요
+        </p>
+      </div>
+      <div id="step5-detail" class="step-content">
+        <div class="step-title">
+          <h1>STEP <span class="main-blue">05</span><br /></h1>
+          <h2>운동 결과 확인</h2>
+        </div>
+        <img class="shadow" src="analysis-img.svg" />
+        <p>
+          한 세트가 끝나면 <span class="highlight">30초 쉬는 시간</span>과 함께
+          이번 세트 <span class="highlight">정확도</span>와
+          <span class="highlight">피드백</span>이 제공됩니다<br />
+          정확도와 피드백을 통해 본인의 운동 자세를 점검해 주세요<br />
+          이전 세트 평균 정확도 그래프를 통해 전체적인 운동 정확도를 파악할 수
+          있습니다
+        </p>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div id="team-name">HIPPO-ZONE</div>
+    <div id="git-link" onclick="gitHubButtonHandler()">
+      <img id="git-img" src="github-icon.svg" />
+      HIPPO-ZONE
+    </div>
+    <div id="copyright">© HIPPO-ZONE. All rights reserved</div>
+  </footer>
+</html>

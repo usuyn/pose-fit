@@ -1,0 +1,183 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Black';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
+
+body {
+  font-family: Pretendard;
+}
+
+#timeChecker {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: white;
+}
+
+#timeChecker h1 {
+  color: #326789;
+  margin-left: 80px;
+  font-family: Pretendard;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 26px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#timer {
+  width: 120px;
+  height: 120px;
+  margin-right: 40px;
+}
+
+#container {
+  height: 70vh;
+  display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#currentSet {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#previousSet {
+  margin-left: 30px;
+}
+
+.content {
+  background-color: #e9eef4;
+  border-radius: 20px;
+  width: 45.5vw;
+  padding: 20px 0 0 40px;
+}
+
+#accuracy,
+#feedback {
+  height: 34vh;
+  position: absolute;
+}
+
+#accuracy {
+  top: 0px;
+}
+
+#feedback {
+  bottom: 0px;
+}
+
+.content span {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#accuracyContent,
+#feedbackContent {
+  width: 45vw;
+  margin-left: 20px;
+}
+
+#accuracyContent {
+  display: flex;
+  align-items: center;
+  margin: 15px 0px;
+}
+
+.accItem {
+  width: 13vw;
+  height: 23vh;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .accItem img {
+  width: 137px;
+  height: 137px;
+  margin-top: 10px;
+} */
+
+#feedbackContent {
+  height: 20vh;
+  padding: 5px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#feedbackList {
+  margin: auto 0;
+}
+
+#feedbackList li {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 5px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+#setsAccuracyGraph {
+  width: 40vw;
+  height: 60vh;
+  padding: 80px 20px;
+}
+
+.highlight {
+  color: #e65c4f;
+}
+
+#btnContainer {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 30px;
+}
+
+#btnContainer button {
+  width: 120px;
+  height: 45px;
+  margin-right: 40px;
+  padding: 5px 5px;
+  background-color: #326789;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 3px;
+  text-align: center;
+  border: none;
+  box-shadow: 0px 3px 5px 0px rgba(55, 64, 70, 0.3);
+}
+
+#btnContainer button:hover {
+  background-color: #264b63;
+}

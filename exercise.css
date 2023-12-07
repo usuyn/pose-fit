@@ -1,0 +1,93 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
+
+body {
+  font-family: Pretendard;
+}
+
+#tab-bar {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  box-shadow: 0px 4px 10px 0px rgba(124, 141, 165, 0.15);
+}
+
+#tab-bar h1 {
+  color: #326789;
+  margin-left: 165px;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+#tab-bar button {
+  margin-right: 100px;
+  padding: 12px 18px;
+  background-color: #326789;
+  color: #ffffff;
+  font-family: Pretendard;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  border: none;
+  box-shadow: 0px 3px 5px 0px rgba(55, 64, 70, 0.3);
+}
+
+#tab-bar button:hover {
+  background-color: #264b63;
+}
+
+#container {
+  height: 90vh;
+  display: flex;
+}
+
+#web-cam {
+  width: 57vw;
+  height: 90vh;
+  position: relative;
+}
+
+#cam-canvas {
+  height: 550px;
+  width: 550px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e9eef4;
+}
+
+#exercise-info {
+  width: 35vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
+}
+
+.counter {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.info-left {
+  width: 200px;
+  color: #326789;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.info-right {
+  font-size: 63px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
